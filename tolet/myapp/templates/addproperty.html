@@ -148,7 +148,14 @@
             </span>
             <span>
                 <label for="exampleInputEmail1" class="form-label">Contact Info</label><br>
-                <input type="number" placeholder="Contact info" class="form-control">
+                <input type="number" placeholder="Contact " class="form-control">
+            </span>
+            <span>
+                <p>Image Uplode</p>
+                <div class="btn btn-primary btn-rounded">
+                    <label class="form-label text-white m-1" for="customFile1">Choose file</label>
+                    <input type="file" class="form-control d-none" id="customFile1" onchange="displaySelectedImage(event, 'selectedImage')" />
+                </div>
             </span>
             <div class="d-flex justify-content-center text-center my-2">
                 <input type="submit" class="btn btn-dark mb-3 col-6 p-2 "></input>

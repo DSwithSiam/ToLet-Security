@@ -29,4 +29,13 @@ class Property(models.Model):
     image = models.ImageField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+class Register(models.Model):
+    name = models.CharField(max_length=120)
+    phone = models.CharField(max_length=25)
+    email = models.EmailField()
+    password = models.CharField(max_length=30)
+    
+    def __str__(self):
+        return self.name
     

@@ -16,27 +16,34 @@
     <!-- Pills navs -->
 
     <!-- Pills content -->
-    <div class="tab-content">
+    <div class="tab-content" method = "post">
+        {% csrf_token %}
         <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
             <form class="">
                 <div class="shadow p-5">
                     <!-- Name input -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="loginName">Full Name</label>
-                        <input type="text" id="FullName" class="form-control" />
+                        <input type="text" name = 'fullName' id="fullName" class="form-control" />
 
                     </div>
                     <!-- Phone input -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="loginName">Phone</label>
-                        <input type="text" id="Phone" class="form-control" />
+                        <input type="text" name = "phone" id="phone" class="form-control" />
 
                     </div>
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="loginName">E-mail</label>
+                        <input type="text" name = "email" id="email" class="form-control" />
 
+                    </div>
+                    
                     <!-- Password input -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="loginPassword">Password</label>
-                        <input type="password" id="loginPassword" class="form-control" />
+                        <input type="password" name = "password" id="password" class="form-control" />
 
                     </div>
 

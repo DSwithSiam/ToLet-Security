@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from myapp.models import *
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 
 # Create your views here.
@@ -14,6 +15,18 @@ def log_in(request):
     return render(request,'login.html')
 
 def register(request):
+    if request.method == 'POST':
+        fullName = request.POST.get("fullName")
+        phone = request.POST.get("phone")
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+        rg_user = User.objects.create_user(fullName, phone, email, password)
+        # rg_user = Register(name = fullName, phone = phone, email = email, password = password)
+        
+        rg_user.save()
+        print(fullName, phone, email, password)
+        return redirect("login.html")
+    
     return render(request,'register.html')
 
 def about(request):
