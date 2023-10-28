@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+
+{% block title %}add Property{% endblock title %}
+
+{% block content %}
+<body>
+  
+
+    <div class="container col-9 mx-auto">
+        <form action="" onsubmit="HandleSubmit(e)">
+            <h4 class="bg-dark mt-3 p-3 text-center text-light">Submit The Form with Your choice..!</h4>
+            <div>
+                <label for="exampleInputEmail1" class="form-label mt-3">Status</label>
+                <select class="form-select mb-3" aria-label="Default select example">
+                    <option selected>for rent</option>
+                    <option value="2">for sell</option>
+                </select>
+            </div>
+            <div>
+                <label for="exampleInputEmail1" class="form-label">Lift</label>
+                <select class="form-select mb-3" aria-label="Default select example">
+                    <option selected>Yes</option>
+                    <option value="2">No</option>
+                </select>
+            </div>
+            <div>
+                <label for="exampleInputEmail1" class="form-label">Gas</label>
+                <select class="form-select mb-3" aria-label="Default select example">
+                    <option selected>Yes</option>
+                    <option value="2">No</option>
+                </select>
+            </div>
+            <div>
+                <label for="exampleInputEmail1" class="form-label">Property Type</label>
+                <select class="form-select mb-3" aria-label="Default select example">
+                    <option selected>Family</option>
+                    <option value="2">Bachelor</option>
+                    <option value="3">Sublet</option>
+                    <option value="4">Land</option>
+                    <option value="5">Shop</option>
+                    <option value="6">Garage</option>
+                    <option value="7">Office</option>
+                </select>
+            </div>
+            <div>
+                <label for="exampleInputEmail1" class="form-label">Division</label>
+                <select class="form-select mb-3" aria-label="Default select example">
+                    <option selected>Dhaka</option>
+                    <option value="1">Barishal</option>
+                    <option value="2">Chattogram</option>
+                    <option value="3">Khulna</option>
+                    <option value="3">Rajshahi</option>
+                    <option value="3">Rangpur</option>
+                    <option value="3">Mymensingh </option>
+                    <option value="3">Sylhet</option>
+                </select>
+            </div>
+            <div>
+                <label for="exampleInputEmail1" class="form-label">District</label>
+                <select class="form-select mb-3" aria-label="Default select example">
+                    <option selected>Dhaka</option>
+                    <option value="1">Chittagong</option>
+                    <option value="2">Rajshahi</option>
+                    <option value="3">Sylhet</option>
+                    <option value="4">Jessore</option>
+                    <option value="5">Feni</option>
+                    <option value="6">Dinajpur</option>
+                    <option value="7">Mymensingh</option>
+                    <option value="8">Comilla </option>
+                    <option value="9">Barisal </option>
+                    <option value="10">Faridpur </option>
+                    <option value="11">Bogra </option>
+                    <option value="12">Pabna </option>
+                    <option value="13">Rangamati </option>
+                    <option value="14">Kushtia </option>
+                    <option value="15">Rangpur </option>
+                    <option value="16">Noakhali </option>
+                    <option value="17">Khulna </option>
+                    <option value="18">Tangail </option>
+                </select>
+            </div>
+            <div class="">
+                <b> <label for="exampleInputEmail1" class="form-label bold">Property Details :</label></b><br>
+                <div class="row">
+                    <div class="col-4">
+                        <label for="">Square Feet</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-4">
+                        <label for="">Bed Room</label>
+                        <select class="form-select mb-3" aria-label="Default select example">
+
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label for="">Drawing Room</label>
+                        <select class="form-select mb-3" aria-label="Default select example">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label for="">Dining Room</label>
+                        <select class="form-select mb-3" aria-label="Default select example">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label for="">Balcony</label>
+                        <select class="form-select mb-3" aria-label="Default select example">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label for="">Wash Room</label>
+                        <select class="form-select mb-3" aria-label="Default select example">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <label for="exampleInputEmail1" class="form-label">Area name</label>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+            <span>
+                <label for="exampleInputEmail1" class="form-label">Rules</label><br>
+                <textarea name="" placeholder="Rules" id="" class="form-control" rows="4"></textarea>
+            </span>
+            <span>
+                <label for="exampleInputEmail1" class="form-label">Contact Info</label><br>
+                <input type="number" placeholder="Contact info" class="form-control">
+            </span>
+            <div class="d-flex justify-content-center text-center my-2">
+                <input type="submit" class="btn btn-dark mb-3 col-6 p-2 "></input>
+            </div>
+        </form>
+
+    </div>
+
+</body>
+{% endblock content %}
+

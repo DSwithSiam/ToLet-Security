@@ -1,0 +1,189 @@
+{% load static %}
+<div class="menubar"></div>
+    <section>
+        <div class="row container-fluid">
+            <div class="logo-site col-4 p-3">
+                <a href="/">
+                    <img src="{% static "images/logo1.png" %}" alt="logo" class="img-fluid col-8">
+                </a>
+            </div>
+            <div class="col-8 d-flex justify-content-end">
+                <div class="right-site col-4  d-flex text-right">
+                    <a href="{% url 'addpost' %}" class="col-9">
+                        <div class=" addProperty d-flex justify-content-center my-3 p-2 border  text-right ">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg> Add Property
+                        </div>
+                    </a>
+                </div>
+                <div class="mt-4">
+                    <span>
+                        <a href="{% url "login" %}">SignIn</a>
+                    </span>
+                    /
+                    <span>
+                        <a href="{% url "register" %}">SignUp</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Property List</a>
+                        <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/family/">Family</a></li>
+                            <li><a class="dropdown-item" href="/office/">Office</a></li>
+                            <li><a class="dropdown-item" href="/bachelor/">Bachelor</a></li>
+                            <li><a class="dropdown-item" href="/sublet/">Sublet</a></li>
+                            <li><a class="dropdown-item" href="/about/">about</a></li>
+    
+                            <li><a class="dropdown-item" href="#">Shop</a></li>
+                            <li><a class="dropdown-item" href="#">Hostel</a></li>
+                            <li><a class="dropdown-item" href="#">Land</a></li>
+                            <li><a class="dropdown-item" href="#">Job</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url "saveproperty" %}">Save Property</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url "payment" %}">Payment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url "services" %}">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url "about" %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url "setting" %}">Settings</a>
+                    </li>
+                </ul>
+                <div>
+                    <button type="button" class="btn border btn-dark" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        Search more advancely
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- popup -->
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal fade p-3" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Where do you want to Search</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form>
+                    <div class="row">
+                        <div class="col-4">
+                            <label for="">Division</label>
+                            <select class="form-select mb-3" aria-label="Default select example">
+                                <option selected>Dhaka</option>
+                                <option value="1">Barishal</option>
+                                <option value="2">Chattogram</option>
+                                <option value="3">Khulna</option>
+                                <option value="3">Rajshahi</option>
+                                <option value="3">Rangpur</option>
+                                <option value="3">Mymensingh </option>
+                                <option value="3">Sylhet</option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <label for="">District</label>
+                            <select class="form-select mb-3" aria-label="Default select example">
+                                <option selected>Dhaka</option>
+                                <option value="1">Chittagong</option>
+                                <option value="2">Rajshahi</option>
+                                <option value="3">Sylhet</option>
+                                <option value="4">Jessore</option>
+                                <option value="5">Feni</option>
+                                <option value="6">Dinajpur</option>
+                                <option value="7">Mymensingh</option>
+                                <option value="8">Comilla </option>
+                                <option value="9">Barisal </option>
+                                <option value="10">Faridpur </option>
+                                <option value="11">Bogra </option>
+                                <option value="12">Pabna </option>
+                                <option value="13">Rangamati </option>
+                                <option value="14">Kushtia </option>
+                                <option value="15">Rangpur </option>
+                                <option value="16">Noakhali </option>
+                                <option value="17">Khulna </option>
+                                <option value="18">Tangail </option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Area name</label>
+                            <select class="form-select mb-3" aria-label="Default select example">
+                                <option selected>Mirpur</option>
+                                <option value="1">Chittagong</option>
+                                <option value="2">Rajshahi</option>
+                                <option value="3">Sylhet</option>
+                                <option value="4">Jessore</option>
+                                <option value="5">Feni</option>
+                                <option value="6">Dinajpur</option>
+                                <option value="7">Mymensingh</option>
+                                <option value="8">Comilla </option>
+                                <option value="9">Barisal </option>
+                                <option value="10">Faridpur </option>
+                                <option value="11">Bogra </option>
+                                <option value="12">Pabna </option>
+                                <option value="13">Rangamati </option>
+                                <option value="14">Kushtia </option>
+                                <option value="15">Rangpur </option>
+                                <option value="16">Noakhali </option>
+                                <option value="17">Khulna </option>
+                                <option value="18">Tangail </option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Property Type</label>
+                            <select class="form-select mb-3" aria-label="Default select example">
+                                <option selected>Family</option>
+                                <option value="2">Bachelor</option>
+                                <option value="3">Sublet</option>
+                                <option value="4">Land</option>
+                                <option value="5">Shop</option>
+                                <option value="6">Garage</option>
+                                <option value="7">Office</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Search</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </form>
+                
+            </div>
+        </div>
+    </div>

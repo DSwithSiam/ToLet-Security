@@ -1,0 +1,12 @@
+
+.boxbackground {
+    border-radius: 35px;
+    background-size: 400% 400%;
+  }
+  i{
+    border-radius: 7px;
+    background: white;
+  }
+  input{
+    font-family: sans-serif;
+  }
