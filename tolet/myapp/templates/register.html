@@ -16,10 +16,11 @@
     <!-- Pills navs -->
 
     <!-- Pills content -->
-    <div class="tab-content" method = "post">
-        {% csrf_token %}
+    <div class="tab-content" >
+        
         <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-            <form class="">
+            <form class="" method = "post">
+                {% csrf_token %}
                 <div class="shadow p-5">
                     <!-- Name input -->
                     <div class="form-outline mb-4">

@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from myapp.models import *
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
 
 
 # Create your views here.
@@ -12,6 +13,15 @@ def add_property(request):
     return render(request,'addproperty.html')
 
 def log_in(request):
+    if request.method == 'POST':
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('profile')
+        else:
+            return redirect('login')
     return render(request,'login.html')
 
 def register(request):
@@ -20,12 +30,12 @@ def register(request):
         phone = request.POST.get("phone")
         email = request.POST.get("email")
         password = request.POST.get("password")
-        rg_user = User.objects.create_user(fullName, phone, email, password)
-        # rg_user = Register(name = fullName, phone = phone, email = email, password = password)
+        rg_user = User.objects.create_user(username=email, email=email, password=password)
+        rg_user = Register(name = fullName, phone = phone, email = email, password = password)
         
         rg_user.save()
-        print(fullName, phone, email, password)
-        return redirect("login.html")
+        return redirect('login')
+        
     
     return render(request,'register.html')
 
