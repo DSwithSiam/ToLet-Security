@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/font/bootstrap-icons.min.css">
+    <title>house_owner Dashboard</title>
+</head>
+<body class="">
+    <section class="mt-4 p-2 bg-light shadow-lg">
+        <div class="m-3 border rounded">
+            <div class="row " >
+                <div class="col-lg-3">
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="assets/images/profile_demo.jpg" alt="Bariwala" class="ms-5 h-100  w-75 rounded-circle shadow">
+                        </div>
+                        <div class="col-6 mt-4">
+                            <p> Name...</p>
+                           <a href="{% url "profile" %}" class="btn btn-dark text-white">Profile</a>
+                        </div>
+                        <div class="col  m-2">
+                            <h3>House List</h3>
+                            <ul>
+                                <li><a href="#" class="btn shadow w-75">Villa1</a></li>
+                                <li><a href="#" class="btn shadow w-75">Villa2</a></li>
+                                <li><a href="#" class="btn shadow w-75">Villa3</a></li>
+                                <li><a href="#" class="btn shadow w-75"><i></i>Add more</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <h1 class="display-1">Villa1</h1>
+                    <div class="row mt-3">
+                        <div class="col-lg-3">
+                            <div class="card h-100 w-100">
+                                <div class="card-body">
+                                  <h5 class="card-title fw-bold">Total rent</h5>
+                                  <p class="card-text">Contain the graph/chart for the total rent.</p>
+                                  <a href="#" class="btn btn-dark text-white">Click to view</a>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card h-100 w-100">
+                                <div class="card-body">
+                                  <h5 class="card-title fw-bold">Rent due</h5>
+                                  <p class="card-text">Contain the rent due graph/chart</p>
+                                  <a href="#" class="btn btn-dark text-white">Click to view</a>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card h-100 w-100">
+                                <div class="card-body">
+                                  <h5 class="card-title fw-bold">Empty flat</h5>
+                                  <p class="card-text">Contain the graph for empty flat</p>
+                                  <a href="#" class="btn btn-dark text-white">Click to view</a>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card h-100 w-100">
+                                <div class="card-body">
+                                  <h5 class="card-title fw-bold">Maintanace request</h5>
+                                  <p class="card-text">Contain Maintanace history graph/chart</p>
+                                  <a href="#" class="btn btn-dark text-white">Click to view</a>  
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br><br><br><br>
+
+    <section class="mb-3 p-2 d-none d-sm-block bg-light shadow-lg">
+        <div class="bg-light m-3 border rounded">
+            <div class="row">
+                <div class="col-sm m-3">
+                    <p>renter table</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="#" class="m-3 p-2 btn btn-dark text-white d-sm-none d-flex justify-content-center"> Click to view the renter table</a>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
