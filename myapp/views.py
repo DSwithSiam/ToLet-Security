@@ -6,6 +6,8 @@ from django.contrib.auth.forms import UserChangeForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.models import User
+
 
 
 # Create your views here.
@@ -118,11 +120,13 @@ def log_out(request):
 
 def changePassword(request):
     form = ChangePasswordForm(user=request.user)
+    
     return render(request, 'changePassword.html',{'form':form})
                   
 def profile (request):
-    
-    return render (request, "profile.html")
+    user = UserData()
+    print(user)
+    return render (request, "profile.html" , { "member":user})
 
 def editProfile (request):
     return render (request, "editProfile.html")

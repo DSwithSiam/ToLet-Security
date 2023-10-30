@@ -36,3 +36,5 @@ class ChangePasswordForm(SetPasswordForm):
         attrs={'autocomplete': True, 'class': 'form-control', 'placeholder': 'New Password'}))
     new_password2 = forms.CharField(label=_('Confirm Password'), strip=False, widget=forms.PasswordInput(
         attrs={'autocomplete': True, 'class': 'form-control', 'placeholder': 'Confirm Password'}))
+
+
