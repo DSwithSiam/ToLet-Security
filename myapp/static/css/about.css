@@ -1,0 +1,26 @@
+.about{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,auto));
+    gap: 2re;
+    margin-top: 70px;
+
+}
+.about-img img{
+    border-radius: 3rem 0 3rem 3rem ;
+    width: 460px;
+    height: 340px;
+    margin-top: 10px;
+}
+.about-text span{
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--main--color);
+}
+
+.about-text h2{
+    font-size:1.7rem ;
+    margin: 1rem 0 1rem;
+
+
+}

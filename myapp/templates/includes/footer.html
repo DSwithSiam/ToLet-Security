@@ -1,9 +1,123 @@
-<section id="footer" class="py-3 bg-dark text-light mt-5">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-8">
-                <p class="text-center">Copyright &copy; {% now "Y" %}, All Right Reserved. Developed By Error Finder!</p>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+ 
+</head>
+<body>
+    <main  class="pt-5 px-3 ">
+
+        <!-- footer section 1-->
+        <section class="row d-flex pt-3  ">
+            <div class="bg-dark col p-2">
             </div>
-        </div>
-    </div>
-</section>
+            <div class="bg-danger col p-2">
+            </div>
+            <div class="bg-dark  w-full col p-2" >
+            </div>
+        </section>
+        
+        <!-- footer section 2-->
+        <section class=" row footer-section-2 " style="background-color: #D9D9D9" ">
+
+                <!--Logo and Information -->
+
+                <div class="col-12 col-lg-4 md-col-12 d-flex pt-5 p-2 px-md-5 px-lg-5 ms-lg-5">
+                    <div class="">
+                        <div class=" text-dark ">
+                            <img class="w-md-50  w-75" src="{% static "images\logo1.png" %}" alt="">
+                        </div>
+                        <div class="">
+                            <p> <p class="fw-bold d-inline pt-3">Phone:</p> +88 01751379009</p>
+                            <p> <p class="fw-bold d-inline ">Email:</p> info@toletandsecurity.com</p>
+                            <p> <p class="fw-bold d-inline">Toletbook: </p>It’s a rental and service-oriented platform. Our corporate operation chain is enough passionate about ensuring human welfare. Join with us!!</p>
+                        </div>
+                        <div class="d-flex ">
+                            <p class="fw-bold">Social Media:</p>
+                            <p class="mx-2"><a href=""><i class="fa-brands fa-facebook"></i></a></p>
+                            <p class="mx-2"><a href=""><i class="fa-brands fa-whatsapp"></i></a></p>
+                            <p class="mx-2"><a href=""><i class="fa-brands fa-youtube"></i></a></p>
+                            
+                        </div>
+                    </div>    
+                </div>
+                
+                <!-- Link page Computer-->
+                <div class="col-12 col-lg-7 d-none d-sm-block pt-lg-5 px-md-5">
+                    <div class="row footer-link ">
+                        <!-- home link -->
+                        <div class="col-4 pt-3">
+                            <p class="fw-bold"> Home Link </p>
+                            <p class=" zoom"> <a href="">Homepage</a> </p>
+                            <p class="mt-2 zoom"> <a href="">Our Properties</a> </p>
+                            <p class="mt-2 zoom"> <a href="">Verified Properties</a> </p>
+                            <p class="mt-2 zoom"> <a href="">About Us</a> </p>
+                            <p class="mt-2 zoom"> <a href="">Login</a> </p>
+                            <p class="mt-2 zoom"> <a href="">Reigstration</a> </p>
+                        </div>
+                        <!-- Services -->
+                        <div class="col-4 pt-3">
+                            <p class="fw-bold"> Services </p>
+                            <p class="mt-2 zoom"> <a href="">Our Services</a></p>
+                            <p class="mt-2 zoom"> <a href="">Tolets</a> </p>
+                            <p class="mt-2 zoom"> <a href="">My Properties</a> </p>
+                            <p class="mt-2 zoom"> <a href="">My Profile</a> </p>
+                            <p class="mt-2 zoom"> <a href="">Dashboard</a> </p>
+                            <p class="mt-2 zoom"> <a href="">Emergency Support</a> </p>
+                        </div>
+                        <!-- Terms and Condition -->
+                        <div class="col-4 pt-3">
+                            <p class="fw-bold">Terms & Condition </p>
+                            <p class="mt-2 zoom"> <a href="">Privacy Policy</a> </p>
+                            <p class="mt-2 zoom"> <a href="">Terms & Conditions</a> </p>
+                            <p class="mt-2 zoom"> <a href="">Our FAQ</a> </p>
+                            <p class="mt-2 zoom"> <a href="">Contact Us</a> </p>
+                            <p class="mt-2 zoom"> <a href="">Our Tutorials</a> </p>
+                            <p class="mt-2 zoom"> <a href="">Google Map</a> </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Link page Mobile -->
+                <div class="row d-sm-none d-flex  p-2 px-md-5">
+                    <div class="col-6 w-full">
+                        <p class="fw-bold"> Services </p>
+                        <p class="mt-2 zoom"> <a href="">Our Services</a> </p>
+                        <p class="mt-2 zoom"> <a href="">Tolets</a> </p>
+                        <p class="mt-2 zoom"> <a href="">My Properties</a> </p>
+                        <p class="mt-2 zoom"> <a href="">My Profile</a> </p>
+                        <p class="mt-2 zoom"> <a href="">Dashboard</a> </p>
+                        <p class="mt-2 zoom"> <a href="">Emergency Support</a> </p>
+                    </div>
+                    <div class="col-6 w-full ">
+                        <p class="fw-bold"> Terms & Condition</p>
+                        <p class="mt-2 zoom"> <a href="">Privacy Policy</a> </p>
+                        <p class="mt-2 zoom"> <a href="">Terms & Conditions</a> </p>
+                        <p class="mt-2 zoom"> <a href="">Our FAQ</a> </p>
+                        <p class="mt-2 zoom"> <a href="">Contact Us</a> </p>
+                        <p class="mt-2 zoom"> <a href="">Our Tutorials</a> </p>
+                        <p class="mt-2 zoom"> <a href="">Google Map</a> </p>
+                    </div>
+                </div>
+        </section>
+
+        <!-- footer section 3-->
+
+        <section class="row">
+            <div class="col bg-dark text-white text-center">
+              <p class="pt-2">@copyright-2023 all rights reserved toletandsecurity.com ltd</p>
+            </div>
+        </section>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    </main>
+    
+</body>
+</html>

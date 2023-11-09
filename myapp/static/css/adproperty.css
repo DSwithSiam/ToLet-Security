@@ -1,0 +1,120 @@
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+        color: #fff;
+        background-color: #212529;
+}
+.nav-link:focus, .nav-link:hover {
+        color: #212529;
+}
+ /* for features */
+.form-check-input:checked {
+        background-color: #212529;
+        border-color: #212529;
+}
+
+/* #Images */
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    width: 100%;
+   
+}   
+
+.box{
+    max-width: 500px;
+    border: 1px solid rgb(231, 231, 231);
+    padding: 30px;
+    width: 100%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.upload-area-title{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.uploadlabel{
+    width: 100%;
+    min-height: 100px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px dashed #212529;
+    cursor: pointer;
+}
+.uploadlabel span{
+    font-size: 70px;
+    color: #212529;
+}
+.uploadlabel p{
+    color: #212529;
+    font-size: 20px;
+    font-weight: 800;
+    
+}
+.uploaded{
+    margin: 30px 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #212529;
+}
+.showfilebox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 10px 15px;
+    box-shadow: #0000000d 0px 0px 0px 1px, #d1d5db3d 0px 0px 0px 1px inset;
+}
+.showfilebox .left{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.filetype{
+    background: #212529;
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 700;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+.left h3{
+    font-weight: 600;
+    font-size: 18px;
+    color: black;
+    margin: 0;
+}
+.right span{
+    background-color: #212529;
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    font-size: 25px;
+    line-height: 22px;
+    display: inline-block;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+

@@ -1,8 +1,24 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block title %}
+ToLet & Security | About
+{% endblock title %}
 
-{% block title %}About{% endblock title %}
+{% block content %}
+<section class="about container" id="about">
+    <div class="about-img">
+        <img src="{% static "images/about.jpg" %}" alt="img">
+    </div>
 
+    <div class="about-text">
+        <span>About Us</span>
+<h2>We Provide The Best <br>Property For You</h2>
+<p>Welcome to The Tolet. The Tolet was founded in 2016 by Amit Ghosh Anto. The Tolet is an online-based effort to solve all the problems like Family, Bachelor, Office , Hostel, Sublet, Mess related to rent and which is also working as a part of the conviction to build a Digital Bangladesh.
+    This company wants to give BANGLADESH a proper system to have house rent solution in digital way, without any broker issues.
+    By using The Tolet, you can find family-home/bachelor-home/office/hostel/sublet/mess in different parts of Bangladesh from anywhere in the world. By paying attention to the time and saving the cost, the landlord can easily get the tenant and the tenant will find the house he likes. You can publish the house rent advertisement in any area or region of Bangladesh.
+    By using The Tolet every street and house wall will be free of leaflets.</p>
+<a href="#">Learn More....</a>
+    </div>
 
-
-
-{% block content %}About Page{% endblock content %}
+</section>
+{% endblock %}

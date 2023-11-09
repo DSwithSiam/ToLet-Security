@@ -3,7 +3,12 @@ from myapp.models import *
 
 
 # Register your models here.
+# To view data in tables form in Database
+class Addproperty(admin.ModelAdmin):
+    list_display = ('id', 'propertytype', 'division',
+                    'district', 'areaname', 'images')
+    # it’s must be list or tuple
+
+
 admin.site.register(Service)
-admin.site.register(UserData)
-class std_UserData(admin.ModelAdmin):
-    list_display = ('user', 'user_firstname', 'user_lastname', 'user_address', 'user_state', 'user_area', 'user_postcode', 'user_phone', 'user_education')
+admin.site.register(Add_property, Addproperty)

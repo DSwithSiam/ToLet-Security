@@ -3,115 +3,49 @@
 
 
 {% block content %}
+<div class="background-image"></div>
 <section id="home" class="my-2">
     <div class="container my-5">
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-5">
-            <div class="col">
-                <div class="card  ">
-                    <img src="{% static 'images/Screenshot 2023-10-23 203141.png'%}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6 class="text-danger card-title">Bachelor Flat</h6>
-                        <p class="card-text">Mirpur, Dhaka
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
+            {% for x in home %}
             <div class="col">
                 <div class="card">
                     <img src="{% static 'images/Screenshot 2023-10-23 203141.png'%}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h6 class="text-danger card-title">Bachelor Flat</h6>
-                        <p class="card-text">Mirpur, Dhaka
+                        <h6 class="text-danger card-title">{{x.propertytype}}</h6>
+                        <p class="card-text">{{x.division}}, {{x.district}}
                         </p>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Last updated 3 mins ago</small>
                     </div>
+
                 </div>
             </div>
-            <div class="col">
-                <div class="card">
-                    <img src="{% static 'images/Screenshot 2023-10-23 203141.png'%}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6 class="text-danger card-title">Bachelor Flat</h6>
-                        <p class="card-text">Mirpur, Dhaka
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="{% static 'images/Screenshot 2023-10-23 203141.png'%}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6 class="text-danger card-title">Bachelor Flat</h6>
-                        <p class="card-text">Mirpur, Dhaka
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="{% static 'images/Screenshot 2023-10-23 203141.png'%}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6 class="text-danger card-title">Bachelor Flat</h6>
-                        <p class="card-text">Mirpur, Dhaka
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="{% static 'images/Screenshot 2023-10-23 203141.png'%}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6 class="text-danger card-title">Bachelor Flat</h6>
-                        <p class="card-text">Mirpur, Dhaka
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="{% static 'images/Screenshot 2023-10-23 203141.png'%}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6 class="text-danger card-title">Bachelor Flat</h6>
-                        <p class="card-text">Mirpur, Dhaka
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card ">
-                    <img src="{% static 'images/Screenshot 2023-10-23 203141.png'%}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h6 class="text-danger card-title">Bachelor Flat</h6>
-                        <p class="card-text">Mirpur, Dhaka
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
+
         </div>
 
     </div>
 </section>
+
+<section>
+    <div class="text-center bg-dark py-3">
+        <div>
+            <h3>Join our professional team to <br> start selling your house</h3>
+        </div>
+        <div>
+            <button class="btn btn-success">Contact</button>
+        </div>
+    </div>
+</section>
+<style>
+    .background-image {
+        background-image: url('static/images/cover.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 70vh;
+    }
+</style>
 {% endblock content %}

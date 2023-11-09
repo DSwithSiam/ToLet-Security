@@ -1,0 +1,67 @@
+footer .container{
+    height: auto;
+}
+.footer-col-two a{
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+.footer-col-two a:hover{
+    color: rgb(178, 178, 178);
+}
+.contacts i{
+    font-size: 20px;
+    color: rgb(14, 246, 14);
+    padding-right: 8px;
+}
+
+.contacts span:hover{
+    color: rgb(178, 178, 178);
+}
+.follow-us a i{
+    font-size: x-large;
+    padding-right: 8px;
+}
+
+.paymentmetod img{
+    border-radius: 10px;
+    width: 60px;
+    padding-right: 6px;
+    padding-bottom: 6px;
+}
+
+/*
+@media screen and (max-width: 768px) {
+    .container{
+        width: auto!important;
+        padding: 0!important;
+        margin: 0;
+    }
+
+.coloumn-one{
+        display: block!important;
+    }
+    
+   .footer-col-one p{
+        font-size:10px ;
+    }
+    .footer-col-two{
+        margin-top: 10px;
+        padding-bottom: 15px;
+    }
+    .footer-col-two a{
+        font-size: 13px;
+    }
+    .footer-col-three p{
+        font-size: 11px;
+    }
+    .contacts i{
+        font-size: 12px;
+    }
+    .contacts span{
+        font-size: 12px;
+    }
+    .footer-col-four{
+        margin-top: 15px;
+    }
+}

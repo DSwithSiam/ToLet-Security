@@ -1,0 +1,28 @@
+
+.zoom{
+    position: relative;
+    overflow: hidden;
+}
+
+.zoom:hover{
+   
+    transition: transform 0.3s ;
+    transform: scale(1.09);
+}
+.footer-section-2{
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+}
+
+
+@media screen and (max-width:758px){
+    .footer-section-2{
+        display: block;
+    }
+}
+
+@media screen and (min-width:400px){
+    .footer-link{
+        display: none;
+    }
+}

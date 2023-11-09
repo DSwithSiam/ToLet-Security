@@ -1,159 +1,341 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}add Property{% endblock title %}
 
 {% block content %}
 
-    <div class="container col-7 mx-auto">
-        <form action="" onsubmit="HandleSubmit(e)">
-            <h4 class="bg-dark mt-3 p-3 text-center text-light">Submit The Form</h4>
-            <div class = 'row'>
-                <div class = "col-6">
-                <label for="exampleInputEmail1" class="form-label ">Status</label>
-                <select class="form-select mb-3" aria-label="Default select example">
-                    <option selected>for rent</option>
-                    <option value="2">for sell</option>
-                </select>
+<div class="container col-9 mx-auto">
+    <form id="myForm" action="" method="POST" autocomplete="off">
+        {% csrf_token %}
+        <h2 align=center class="bg-dark text-light my-2 p-2">Submit the Property</h1>
+            
+                <div style="text-align:center" class="d-flex justify-content-evenly ">
+                    <span class="step btn btn-dark" id="step-1">Property Information</span>
+                    <span class="step btn btn-dark" id="step-2">Add Location</span>
+                    <span class="step btn btn-dark" id="step-3">Facilities</span>
+                    <span class="step btn btn-dark" id="step-4">Add Images</span>
+                    <span class="step btn btn-dark" id="step-5">Owner Information</span>
                 </div>
             
-                <div class = "col-6">
-                <label for="exampleInputEmail1" class="form-label">Property Type</label>
-                <select class="form-select mb-3" aria-label="Default select example">
-                    <option selected>Family</option>
-                    <option value="2">Bachelor</option>
-                    <option value="3">Sublet</option>
-                    <option value="4">Land</option>
-                    <option value="5">Shop</option>
-                    <option value="6">Garage</option>
-                    <option value="7">Office</option>
-                </select>
+
+            <!-- Property Information -->
+            <div class="tab" id="tab-1">
+
+                <div>
+                    <label for="exampleInputEmail1" class="form-label mt-3">Status</label>
+                    <select class="form-select mb-3" aria-label="Default select example" name="status">
+                        <option selected>for rent</option>
+                        <option value="for sell">for sell</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="exampleInputEmail1" class="form-label">Property Type</label>
+                    <select class="form-select mb-3" aria-label="Default select example" name="propertytype">
+                        <option selected>Family</option>
+                        <option value="Bachelor">Bachelor</option>
+                        <option value="Sublet">Sublet</option>
+                        <option value="Land">Land</option>
+                        <option value="Shop">Shop</option>
+                        <option value="Garage">Garage</option>
+                        <option value="Office">Office</option>
+                    </select>
+                </div>
+
+                <div class="">
+                    <b> <label for="exampleInputEmail1" class="form-label bold">Property Details :</label></b><br>
+                    <div class="row">
+                        <div class="col-4">
+                            <label for="">Size</label>
+                            <input type="text" class="form-control" placeholder="square feet">
+                        </div>
+                        <div class="col-4">
+                            <label for="">Bed Room</label>
+                            <select class="form-select mb-3" aria-label="Default select example">
+
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Drawing Room</label>
+                            <select class="form-select mb-3" aria-label="Default select example">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Dining Room</label>
+                            <select class="form-select mb-3" aria-label="Default select example">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Balcony</label>
+                            <select class="form-select mb-3" aria-label="Default select example">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Wash Room</label>
+                            <select class="form-select mb-3" aria-label="Default select example">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <span>
+                        <label for="exampleInputEmail1" class="form-label">Rules</label><br>
+                        <textarea name="" placeholder="Rules" id="" class="form-control" rows="4"></textarea>
+                    </span>
+                    <span>
+                        <label for="exampleInputEmail1" class="form-label">Comment</label><br>
+                        <textarea name="" placeholder="Type your comment here...." id="" class="form-control"
+                            rows="4"></textarea>
+                    </span>
+
+                </div>
+
+                <div class="index-btn-wrapper">
+                    <div class="index-btn btn btn-dark mt-3" onclick="run(1, 2);">Next</div>
                 </div>
             </div>
-            <div class = 'row'>
-                <div class = "col-6">
-                <label for="exampleInputEmail1" class="form-label">Division</label>
-                <select class="form-select mb-3" aria-label="Default select example">
-                    <option selected>Dhaka</option>
-                    <option value="1">Barishal</option>
-                    <option value="2">Chattogram</option>
-                    <option value="3">Khulna</option>
-                    <option value="3">Rajshahi</option>
-                    <option value="3">Rangpur</option>
-                    <option value="3">Mymensingh </option>
-                    <option value="3">Sylhet</option>
-                </select>
+
+            <!-- Add Location -->
+            <div class="tab" id="tab-2">
+                <div>
+                    <label for="exampleInputEmail1" class="form-label">Division</label>
+                    <select class="form-select mb-3" aria-label="Default select example" name="division">
+                        <option selected>Dhaka</option>
+                        <option value="Barishal">Barishal</option>
+                        <option value="Chattogram">Chattogram</option>
+                        <option value="Khulna">Khulna</option>
+                        <option value="Rajshahi">Rajshahi</option>
+                        <option value="Rangpur">Rangpur</option>
+                        <option value="Mymensingh">Mymensingh </option>
+                        <option value="Sylhet">Sylhet</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="exampleInputEmail1" class="form-label">District</label>
+                    <select class="form-select mb-3" aria-label="Default select example" name="district">
+                        <option divisiond>Dhaka</option>
+                        <option value="Chittagong">Chittagong</option>
+                        <option value="Rajshahi">Rajshahi</option>
+                        <option value="Sylhet">Sylhet</option>
+                        <option value="Jessore">Jessore</option>
+                        <option value="Feni">Feni</option>
+                        <option value="Dinajpur">Dinajpur</option>
+                        <option value="Mymensingh">Mymensingh</option>
+                        <option value="Comilla">Comilla </option>
+                        <option value="Barisal">Barisal </option>
+                        <option value="Faridpur">Faridpur </option>
+                        <option value="Bogra">Bogra </option>
+                        <option value="Pabna">Pabna </option>
+                        <option value="Rangamati">Rangamati </option>
+                        <option value="Kushtia">Kushtia </option>
+                        <option value="Rangpur">Rangpur </option>
+                        <option value="Noakhali">Noakhali </option>
+                        <option value="Khulna">Khulna </option>
+                        <option value="Tangail">Tangail </option>
+                    </select>
+                </div>
+                <div>
+                    <label for="exampleInputEmail1" class="form-label">Upazilla</label>
+                    <select class="form-select mb-3" aria-label="Default select example">
+                        <option selected>Dhaka</option>
+                        <option value="1">Chittagong</option>
+                        <option value="2">Rajshahi</option>
+                        <option value="3">Sylhet</option>
+                        <option value="4">Jessore</option>
+                        <option value="5">Feni</option>
+                        <option value="6">Dinajpur</option>
+                        <option value="7">Mymensingh</option>
+                        <option value="8">Comilla </option>
+                        <option value="9">Barisal </option>
+                        <option value="10">Faridpur </option>
+                        <option value="11">Bogra </option>
+                        <option value="12">Pabna </option>
+                        <option value="13">Rangamati </option>
+                        <option value="14">Kushtia </option>
+                        <option value="15">Rangpur </option>
+                        <option value="16">Noakhali </option>
+                        <option value="17">Khulna </option>
+                        <option value="18">Tangail </option>
+                    </select>
+                </div>
+
+
+                <label for="exampleInputEmail1" class="form-label">Area name</label>
+                <input type="text" class="form-control mb-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="areaname">
+
+
+                <div class="index-btn-wrapper">
+                    <div class="index-btn btn btn-dark " onclick="run(2, 1);">Previous</div>
+                    <div class="index-btn btn btn-dark" onclick="run(2, 3);">Next</div>
+                </div>
+            </div>
+
+            <!-- Facilities -->
+            <div class="tab" id="tab-3">
+                <div class="d-flex justify-content-evenly mt-5">
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Lift</label>
+                    </div>
+
+
+                    <div class="form-check form-switch mb-5">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Gas</label>
+                    </div>
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                            checked>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Garage</label>
+                    </div>
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                            checked>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">CC Camera</label>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-evenly">
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                            checked>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Security guard</label>
+                    </div>
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                            checked>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Swiming pool</label>
+                    </div>
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                            checked>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Store room</label>
+                    </div>
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                            checked>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Fire extinguisher</label>
+                    </div>
+                </div>
+
+                <div class="index-btn-wrapper">
+                    <div class="index-btn btn btn-dark " onclick="run(3, 2);">Previous</div>
+                    <div class="index-btn btn btn-dark" onclick="run(3, 4);">Next</div>
+                </div>
+            </div>
+
+            <!-- Add Images -->
+            <div class="tab" id="tab-4">
+                <div class="wrapper">
+                    <div class="box">
+                        <div class="input-bx">
+                            <h2 class="upload-area-title">Upload Images</h2>
+                            <input type="file" id="upload" accept=".doc,.docx,.pdf,.jpg, .jpeg" name= "images" hidden>
+                            <label for="upload" class="uploadlabel">
+                            <span><i class="fa fa-cloud"></i></span>
+                            <p>Click to Upload</p>
+                            </label>
+                            
+                        </div>
+                        <div id="filewrapper">
+                            <h3 class="uploaded">Uploded Images</h3>
+                            
+                        </div>
+                    </div>
                 </div>
             
-            <div class="col-6">
-                <label for="exampleInputEmail1" class="form-label">District</label>
-                <select class="form-select mb-3" aria-label="Default select example">
-                    <option selected>Dhaka</option>
-                    <option value="1">Chittagong</option>
-                    <option value="2">Rajshahi</option>
-                    <option value="3">Sylhet</option>
-                    <option value="4">Jessore</option>
-                    <option value="5">Feni</option>
-                    <option value="6">Dinajpur</option>
-                    <option value="7">Mymensingh</option>
-                    <option value="8">Comilla </option>
-                    <option value="9">Barisal </option>
-                    <option value="10">Faridpur </option>
-                    <option value="11">Bogra </option>
-                    <option value="12">Pabna </option>
-                    <option value="13">Rangamati </option>
-                    <option value="14">Kushtia </option>
-                    <option value="15">Rangpur </option>
-                    <option value="16">Noakhali </option>
-                    <option value="17">Khulna </option>
-                    <option value="18">Tangail </option>
-                </select>
-            </div>
-            <div>
-                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                <label for="vehicle1">Lift</label>
-            </div>
-            <div>
-                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                <label for="vehicle1">Gas</label><br>
-            </div>
-            <div class="">
-                <b> <label for="exampleInputEmail1" class="form-label bold">Property Details :</label></b><br>
-                <div class="row">
-                    <div class="col-4">
-                        <label for="">Square Feet</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="col-4">
-                        <label for="">Bed Room</label>
-                        <select class="form-select mb-3" aria-label="Default select example">
 
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                    <div class="col-4">
-                        <label for="">Drawing Room</label>
-                        <select class="form-select mb-3" aria-label="Default select example">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                    <div class="col-4">
-                        <label for="">Dining Room</label>
-                        <select class="form-select mb-3" aria-label="Default select example">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                    <div class="col-4">
-                        <label for="">Balcony</label>
-                        <select class="form-select mb-3" aria-label="Default select example">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                    <div class="col-4">
-                        <label for="">Wash Room</label>
-                        <select class="form-select mb-3" aria-label="Default select example">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
+                <div class="index-btn-wrapper">
+                    <div class="index-btn btn btn-dark " onclick="run(4, 3);">Previous</div>
+                    <div class="index-btn btn btn-dark" onclick="run(4, 5);">Next</div>
                 </div>
             </div>
-            <label for="exampleInputEmail1" class="form-label">Area name</label>
-            <input type="text" class="form-control" aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-default">
-            <span>
-                <label for="exampleInputEmail1" class="form-label">Rules</label><br>
-                <textarea name="" placeholder="Rules" id="" class="form-control" rows="4"></textarea>
-            </span>
-            <span>
-                <label for="exampleInputEmail1" class="form-label">Contact Info</label><br>
-                <input type="number" placeholder="Contact info" class="form-control">
-            </span>
-            <div class="d-flex justify-content-center text-center my-2">
-                <input type="submit" class="btn btn-dark mb-3 col-6 p-2 "></input>
+
+            <!-- Owner Information -->
+            <div class="tab" id="tab-5">
+                <div class="mb-3">
+                    <span>
+                        <label for="exampleInputEmail1" class="form-label">Owner name</label><br>
+                        <input type="text" placeholder="name" class="form-control">
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <span>
+                        <label for="exampleInputEmail1" class="form-label">Contact number</label><br>
+                        <input type="number" placeholder="contact number" class="form-control">
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <span>
+                        <label for="exampleInputEmail1" class="form-label">WhatsApp number</label><br>
+                        <input type="number" placeholder="whatsapp number" class="form-control">
+                    </span>
+                </div>
+                
+                <div class="index-btn-wrapper">
+                    <div class="index-btn btn btn-dark" onclick="run(5, 4);">Previous</div>
+                    <button class="index-btn btn btn-dark" type="submit"name="submit">Submit</button>
+                </div>
             </div>
-        </form>
+</div>
 
-    </div>
+</form>
+</div>
 
+<script>
+    // Default tab
+    $(".tab").css("display", "none");
+    $("#tab-1").css("display", "block");
+
+    function run(hideTab, showTab) {
+        if (hideTab < showTab) { // If not press previous button
+            // Validation if press next button
+            var currentTab = 0;
+            x = $('#tab-' + hideTab);
+            y = $(x).find("input")
+            for (i = 0; i < y.length; i++) {
+                if (y[i].value == "") {
+                    $(y[i]).css("background", "#ffdddd");
+                    return false;
+                }
+            }
+        }
+
+        // Progress bar
+        for (i = 1; i < showTab; i++) {
+            $("#step-" + i).css("opacity", "1");
+        }
+
+        // Switch tab
+        $("#tab-" + hideTab).css("display", "none");
+        $("#tab-" + showTab).css("display", "block");
+        $("input").css("background", "#fff");
+    }
+</script>
 
 {% endblock content %}
-

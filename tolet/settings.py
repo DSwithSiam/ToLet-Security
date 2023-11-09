@@ -1,4 +1,3 @@
-
 from pathlib import Path
 import os
 
@@ -15,7 +14,7 @@ SECRET_KEY = 'django-insecure-i#3(09(sxhnt==ux&d7exz-p&84y#b&5d%hi++gbmvz3)(!0a7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -28,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myapp',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -96,7 +96,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Dhaka'
 
 USE_I18N = True
 
@@ -109,7 +109,20 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.meghafoodltd.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'resetpassword@meghafoodltd.com'
+EMAIL_HOST_PASSWORD = '%//ab=qc19M'
+EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = 'resetpassword@meghafoodltd.com'
