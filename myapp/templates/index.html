@@ -3,21 +3,50 @@
 
 
 {% block content %}
-<div class="background-image"></div>
+
+<!-- add -->
+<section class="mt-5">
+    <div class="d-flex justify-content-center">
+        <img class="img-fluid px-2" src="{% static 'images/add-01.gif'%}" alt="">
+    </div>
+</section>
+
+<!--  -->
+<section class="mt-5">
+    <div class="text-center">
+        <p class="fs-2">ToLet & Security-এ স্বাগতম - বাংলাদেশ-এর সবচেয়ে বড় প্রপার্টি মার্কেটপ্লেস!</p>
+        <p class="fs-6">বাংলাদেশ -এর ৮ টি সিটি, ৬৪ টি জেলা, ৪৯২ টি উপজেলা প্রপার্টি বিক্রি, প্রপার্টি ভাড়া, বিল্ডিং পণ্য এবং সেবা খুঁজে নিন!</p>
+    </div>
+</section>
+
+<!-- post -->
 <section id="home" class="my-2">
     <div class="container my-5">
-        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-5">
+        <div class="text-center">
+            <p class="fs-2 shadow ">Featured property</p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
             {% for x in home %}
             <div class="col">
                 <div class="card">
-                    <img src="{% static 'images/Screenshot 2023-10-23 203141.png'%}" class="card-img-top" alt="...">
+                    <img src="{% static 'images/basa-01.jpg'%}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h6 class="text-danger card-title">{{x.propertytype}}</h6>
-                        <p class="card-text">{{x.division}}, {{x.district}}
+                        <p>Prime Office Space for Rent in 100% Compliant Building</p>
+                        <h6 class="text-danger d-inline card-title">
+                            <i class="fa-solid fa-house"></i>
+                            {{x.propertytype}}
+                        </h6>
+                        <p class="d-inline card-text">
+                            <i class="fa-solid fa-location-dot"></i>
+                            {{x.division}}, {{x.district}}
                         </p>
+                        <small class="text-muted d-block">
+                            <i class="fa-regular fa-clock"></i>
+                            Last updated 3 mins ago
+                        </small>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
+                    <div class="">
+                        
                     </div>
 
                 </div>
@@ -29,7 +58,7 @@
     </div>
 </section>
 
-<section>
+<!-- <section>
     <div class="text-center bg-dark py-3">
         <div>
             <h3>Join our professional team to <br> start selling your house</h3>
@@ -38,7 +67,129 @@
             <button class="btn btn-success">Contact</button>
         </div>
     </div>
+</section> -->
+
+<!-- Feedback -->
+
+<section class="mt-5">
+    <div class="text-center px-5">
+        <p class="fs-3 fw-bold ">Feedback</p>
+        <p class="blockquote-footer ">OUR USERS SEND US BUNCH OF SMILIES WITH OUR SERVICES, AND WE LOVE THEM 😍</p>
+    </div>
+    <div class="row justify-content-center gap-5">
+        <div class="card col-10 col-md-4 col-lg-3 p-3">
+            <h4>Abdul Bari Rabin</h4>
+            <p >
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </p>
+            <p>As a bachelor, I have to look for room most of the time in the city area. 
+                Perhaps there are lots of rental services available offline but online 
+                I prefer............
+            </p>
+        </div>
+        <div class="card col-10 col-md-4 col-lg-3 p-3">
+            <h4>Abdul Bari Rabin</h4>
+            <p >
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </p>
+            <p>As a bachelor, I have to look for room most of the time in the city area. 
+                Perhaps there are lots of rental services available offline but online 
+                I prefer............
+            </p>
+        </div>
+        <div class="card col-10 col-md-4 col-lg-3 p-3">
+            <h4>Abdul Bari Rabin</h4>
+            <p >
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </p>
+            <p>As a bachelor, I have to look for room most of the time in the city area. 
+                Perhaps there are lots of rental services available offline but online 
+                I prefer............
+            </p>
+        </div>
+        
+    </div>
 </section>
+
+<!-- Our Purpose -->
+<section  class="mt-5">
+    <div  class="text-center px-2">
+        <p class="fs-3 fw-bold ">Our purpose</p>
+        <p class="blockquote-footer">MAIN PURPOSE OF OUR COMPANY</p>
+    </div>
+    <div class="row justify-content-center">
+        <p class="col-md-10 col-11 px-3" >Welcome to The Tolet. Thetolet.com is an online-based effort to solve all the
+             problems like Family - House,  Bachelor - House , Office, Hostel, Sublet, 
+             Mess related to rent and which is also working as a part of the conviction 
+             to build a Digital Bangladesh.We want to give BANGLADESH a proper system to 
+             have house rent solution in digitally, without any kind of broker issues.
+             By using Thetolet, you can find family-home, bachelor-home, office, hostel, 
+             sublet, mess in different parts of Bangladesh from anywhere in the world. 
+             By paying attention to the time and saving the cost, the landlord can easily 
+             get the tenant and the tenant will find the house he likes. You can publish 
+             the house rent advertisement in any area or region of Bangladesh. 
+            By using Thetolet every street and house wall will be free of leaflets.
+        </p>
+    </div>
+</section>
+
+
+<!-- Our Purpose -->
+<section  class="mt-5">
+    <div  class="text-center px-2">
+        <p class="fs-3 fw-bold ">News coverage</p>
+        <p class="blockquote-footer">CHECK THE NEWS ABOUT OUR COMPANY</p>
+    </div>
+    <div class="row justify-content-center gap-5">
+        <div class="card col-10 col-md-4 col-lg-3 p-3">
+            <div>
+                <a href=""><img src="{% static 'images/dbnews71.png'%}" class="card-img-top"  alt=""></a>
+            </div>
+            <div class="pt-3">
+                <a href="" class="text-decoration-none text-dark">
+                    মরিঙ্গা পাউডারের ঔষদি গুনাগুন <br>
+                    <i class="fa-solid fa-link"></i> 
+                    dbnews71.com
+                </a>
+            </div>
+        </div>
+        <div class="card col-10 col-md-4 col-lg-3 p-3">
+            <div>
+                <a href=""><img src="{% static 'images/dbnews71.png'%}" class="card-img-top"  alt=""></a>
+            </div>
+            <div class="pt-3">
+                <a href="" class="text-decoration-none text-dark">
+                    মরিঙ্গা পাউডারের ঔষদি গুনাগুন <br>
+                    <i class="fa-solid fa-link"></i> 
+                    dbnews71.com
+                </a>
+            </div>
+        </div>
+        <div class="card col-10 col-md-4 col-lg-3 p-3">
+            <div>
+                <a href=""><img src="{% static 'images/dbnews71.png'%}" class="card-img-top"  alt=""></a>
+            </div>
+            <div class="pt-3">
+                <a href="" class="text-decoration-none text-dark">
+                    মরিঙ্গা পাউডারের ঔষদি গুনাগুন <br>
+                    <i class="fa-solid fa-link"></i> 
+                    dbnews71.com
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <style>
     .background-image {
         background-image: url('static/images/cover.jpg');
@@ -48,4 +199,5 @@
         height: 70vh;
     }
 </style>
+
 {% endblock content %}
