@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+ToLet & Security | Property-single
+{% endblock title %}
+
+{% block content %}
+<section class="mt-5 mx-md-5 mx-3 ">
+   <!-- Title  -->
+    <div>
+      <p class="fs-4">1500 sqft, 3 Beds Under Construction Flats for Sale at Shyamoli</p>
+      <p>
+        <small><i class="fa-solid fa-house"></i> Rent <i class="fa-solid fa-location-dot"></i> Shyamoli, Dhaka. </small>
+      </p>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-lg-6 d-flex justify-content-center">
+            <div id="carouselExample" class="carousel slide ">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/basa-01.jpg'%}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/basa-01.jpg'%}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/basa-01.jpg'%}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExample"
+                    data-bs-slide="prev"
+                >
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExample"
+                    data-bs-slide="next"
+                >
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Details  -->
+        <div class="col-12 col-lg-6">
+            <div class="row">
+              <div class="col-6">
+                <p><b>Property Details:</b></p>
+                <ul>
+                  <li>Size</li>
+                  <li>Bed Room</li>
+                  <li>Drawing Room</li>
+                  <li>Dining Room</li>
+                  <li>Balcony</li>
+                  <li>Wash Room</li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <p><b>Property Owner Details</b></p>
+              </div>
+            </div>
+            <div>
+              <p><b>Property Description</b></p>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium cum asperiores id dignissimos blanditiis itaque molestiae laboriosam voluptate obcaecati recusandae, numquam, nihil voluptatem alias, a corrupti veritatis atque illo dolor.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock content %}

@@ -14,4 +14,6 @@ urlpatterns = [
     path('services/', views.services, name='services'),
     path('saveproperty/', views.saveproperty, name='saveproperty'),
     path('wishlist/<int:pk>/', views.wishlist, name='wishlist'),
+    path('contact/', views.contact, name='contact'),
+    path('property-single/', views.property_single, name='property-single'),
 ]

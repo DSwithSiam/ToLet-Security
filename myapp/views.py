@@ -82,3 +82,9 @@ def wishlist(request, pk):
     property = property.objects.get(id=pk)
     wishlist.object.create(property=property, user=request.user)
     return render(request, 'wishlist.html')
+
+def contact(request):
+    return render(request, 'contact.html')
+
+def property_single(request):
+    return render(request, 'property_single.html')
