@@ -91,7 +91,7 @@ def changePassword(request):
         return redirect('/')
     else:
         form = ChangePasswordForm(user=request.user)
-    return render(request, 'changePassword.html', {'form': form})
+    return render(request, 'change_password.html', {'form': form})
 
 
 @login_required(login_url='login')
@@ -125,7 +125,7 @@ def password_reset(request):
             })
 
             send_mail(mail_subject, message, DEFAULT_FROM_EMAIL, [email])
-        return render(request, 'password_reset_done.html')
+        return render(request, 'password_reset_done.html', {'email': email})
     return render(request, 'password_reset_form.html')
 
 
@@ -153,3 +153,10 @@ def password_reset_done(request):
 
 def password_reset_complete(request):
     return render(request, 'password_reset_complete.html')
+
+def admin_profile(request):
+    return render(request, 'admin_profile.html')
+
+
+def admin_edit_profile(request):
+    return render(request, 'admin_edit_profile.html')

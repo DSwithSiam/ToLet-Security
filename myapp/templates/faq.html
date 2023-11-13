@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}ToLet & Security | Profile{% endblock title %}
+
+{% block content %}
+
+    <style>
+       
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+
+    <div class="container faq-container ">
+        <h1 class="mt-5 mb-4">Frequently Asked Questions (FAQ)-Security </h1>
+
+        <!-- FAQ Section -->
+        <div class="accordion" id="faqAccordion">
+            <!-- Question 1 -->
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne">
+                            Question 1:	How is my data protected?
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                    <div class="card-body">
+                         We prioritize the security of your data through advanced encryption protocols and secure storage practices. Rest assured, your information is treated with the utmost care.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                            Question 2:Do you share my personal information with third parties?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                    <div class="card-body">
+                         No, we do not share your personal information with third parties without your explicit consent. Your privacy is important to us.
+                    </div>
+                </div>
+            </div>
+			      <!-- Question 3 -->
+            <div class="card">
+                <div class="card-header" id="headingTw">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Question 3: What measures are in place to prevent unauthorized access?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Our platform employs robust authentication and authorization processes to prevent unauthorized access. Multi-factor authentication adds an extra layer of security.
+                    </div>
+                </div>
+            </div>
+			      <!-- Question 4 -->
+            <div class="card">
+                <div class="card-header" id="headingFour">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Question 4: Is my payment information secure?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#faqAccordion">
+                    <div class="card-body">
+                       Absolutely. We use industry-standard security measures for handling payment information. All transactions are encrypted to ensure a secure payment process.
+                    </div>
+                </div>
+            </div>
+			      <!-- Question 5 -->
+            <div class="card">
+                <div class="card-header" id="headingFive">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Question 5:	How do you handle security breaches?
+                    </h5>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        In the unlikely event of a security breach. We have a    comprehensive response plan to mitigate the impact and notify affected users promptly.  Your security is our top priority.
+                    </div>
+                </div>
+            </div>
+			
+        <!-- Question 6 -->
+            <div class="card">
+                <div class="card-header" id="headingSix">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            Question 6:	What steps can I take to enhance my account security?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseSix" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        We recommend regularly updating your password. Enabling two-factor authentication. and being cautious about phishing attempts. Stay informed about best security practices.
+                    </div>
+                </div>
+            </div>
+			
+			      <!-- Question 7 -->
+            <div class="card">
+                <div class="card-header" id="headingSeven">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            Question 7:	Are my login credentials stored securely?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Yes, your login credentials are securely hashed and stored.   We follow industry standards to safeguard your sensitive      information.
+                    </div>
+                </div>
+            </div>
+			
+			      <!-- Question 8 -->
+            <div class="card">
+                <div class="card-header" id="headingEight">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                            Question 8:	How often is the system audited for security?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#faqAccordion">
+                    <div class="card-body">
+                          Our security systems undergo regular audits and assessments to identify and address potential vulnerabilities. We are committed to maintaining a robust and secure environment.
+                    </div>
+                </div>
+            </div>
+			
+			      <!-- Question 9 -->
+            <div class="card">
+                <div class="card-header" id="headingNine">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                            Question 9: What should I do if I suspect unusual activity on my account?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Contact our support team immediately if you notice any suspicious activity. We will investigate promptly and take necessary actions to secure your account.
+                    </div>
+                </div>
+            </div>
+			
+			      <!-- Question 10 -->
+            <div class="card">
+                <div class="card-header" id="headingTen">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                            Question 10:	Con I trust your platform with my sensitive information? 
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Yes, you can trust us. We take every possible measure to ensure the confidentiality and integrity of your sensitive information. Our commitment to security is unwavering
+                    </div>
+                </div>
+            </div>
+            <!-- Add more questions as needed -->
+
+        </div>
+        <!-- End FAQ Section -->
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+{% endblock content %}

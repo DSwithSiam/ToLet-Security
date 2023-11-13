@@ -88,3 +88,9 @@ def contact(request):
 
 def property_single(request):
     return render(request, 'property_single.html')
+
+def terms_condition(request):
+    return render(request, 'terms_condition.html')
+
+def faq(request):
+    return render(request, 'faq.html')

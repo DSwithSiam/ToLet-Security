@@ -1,84 +1,118 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block title %}ToLet & Security | Dashboard{% endblock title %}
 
 
 {% block content %}
-<section id="dashboard-top" class="my-5">
-    <div class="container my-3">
+<section id="dashboard-top">
+    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-11 col-md-3 col-lg-3 py-3 mb-4">
-                <img src="{% static 'images/profile_demo.jpg' %}" alt="Bariwala" class="img-fluid rounded-circle shadow"
+            <div class="col-11 col-md-3 col-lg-3 mb-4">
+                
+                <div class="sticky-top pt-5">
+                    <img src="{% static 'images/profile_pic.png' %}" alt="Bariwala" class="img-fluid d-block  rounded-circle shadow"
                     style="width: 150px; height: 150px;">
-                <h4 class="mt-2">Sadiqul islam</h4>
-
-                <ul class="nav flex-column mt-4">
-                    <li class="nav-item mb-2">
-                        <a class="nav-link active rounded-3 border" aria-current="page" href="/profile/">Profile</a>
-                    </li>
-                    <li class="nav-item mb-2">
-                        <a class="nav-link rounded-3 border" href="/change-password/">Change Password</a>
-                    </li>
-                    <li class="nav-item mb-2">
-                        <a class="nav-link rounded-3 border" href="/settings/">Settings</a>
-                    </li>
-                    <li class="nav-item mb-2">
-                        <a class="nav-link rounded-3 border" href="/logout/">Logout</a>
-                    </li>
-                </ul>
+                    <small class="px-5 text-muted" >@{{ request.user.username }}</small>
+                
+                    <ul class="nav flex-column mt-4">
+                        <li class="nav-item mb-2">
+                            <a class="nav-link active rounded-3 border" aria-current="page" href="/admin-profile/">Profile</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link active rounded-3 border" aria-current="page" href="/profile/">Add Property</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link rounded-3 border" href="/change-password/">Change Password</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link rounded-3 border" href="/settings/">Settings</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link rounded-3 border" href="/logout/">Logout</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="col-11 col-md-9 col-lg-9 py-3 mb-4">
+            <div class="col-11 col-md-9 col-lg-9  py-3 mb-4 pt-5">
+                <div class="card p-2  text-center mb-5">
+                    <p>Add your payment method and Ensure a hassle-free experience by 
+                        verifying your profile with complete and accurate information. 
+                        If you encounter any problems or have questions,
+                         feel free to contact us. We are here to help you. 
+                         Contact Informetion : 01751379009 
+                    </p>
+                </div>
+            
                 <h3>Dashboard</h3>
                 <div class="row mt-3">
-                    <div class="col-lg-3 mb-3">
-                        <div class="card h-100 w-100">
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100 w-100 shadow">
                             <div class="card-body">
                                 <h5 class="card-title fw-bold">Total rent</h5>
                                 <p class="card-text">Contain the graph/chart for the total rent.</p>
-                                <a href="#" class="btn btn-dark text-white">Click to view</a>
+                            </div>
+                            <div class="pb-3 pt-2  d-flex justify-content-center">
+                                <a href="#" class="btn btn-dark text-white ">Click to view</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 mb-3">
-                        <div class="card h-100 w-100">
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100 w-100 shadow">
                             <div class="card-body">
-                                <h5 class="card-title fw-bold">Rent due</h5>
-                                <p class="card-text">Contain the rent due graph/chart</p>
-                                <a href="#" class="btn btn-dark text-white">Click to view</a>
+                                <h5 class="card-title fw-bold">Renter List</h5>
+                                <p class="card-text">You can view all rental details</p>
+                            </div>
+                            <div class="pb-3 pt-2 d-flex justify-content-center">
+                                <a href="#" class="btn btn-dark text-white ">Click to view</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 mb-3">
-                        <div class="card h-100 w-100">
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100 w-100 shadow">
                             <div class="card-body">
                                 <h5 class="card-title fw-bold">Empty flat</h5>
                                 <p class="card-text">Contain the graph for empty flat</p>
-                                <a href="#" class="btn btn-dark text-white">Click to view</a>
+                            </div>
+                            <div class="pb-3 pt-2 d-flex justify-content-center">
+                                <a href="#" class="btn btn-dark text-white ">Click to view</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 mb-3">
-                        <div class="card h-100 w-100">
-                            <div class="card-body">
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100 w-100 shadow">
+                            <div class="card-body ">
                                 <h5 class="card-title fw-bold">Maintanace request</h5>
                                 <p class="card-text">Contain Maintanace history graph/chart</p>
-                                <a href="#" class="btn btn-dark text-white">Click to view</a>
+                            </div>
+                            <div class="pb-3 pt-2 d-flex justify-content-center">
+                                <a href="#" class="btn btn-dark text-white ">Click to view</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100 w-100 shadow">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Financial Overview</h5>
+                                <p class="card-text">Income, Expense, and Profit/Loss Statement Summary.</p>
+                            </div>
+                            <div class="pb-3 pt-2 d-flex justify-content-center">
+                                <a href="#" class="btn btn-dark text-white ">Click to view</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100 w-100 shadow">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">Payment Gateways</h5>
+                                <p class="card-text">Integrate payment gateways for online rent payments and other financial transactions.</p>
+                            </div>
+                            <div class="pb-3 pt-2 d-flex justify-content-center">
+                                <a href="#" class="btn btn-dark text-white ">Click to view</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    </div>
-</section>
-
-
-<section id="dashboard-bottom" class="my-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h5>Renter List</h5>
             </div>
         </div>
     </div>

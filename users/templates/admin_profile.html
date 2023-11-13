@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}ToLet & Security | Profile{% endblock title %}
+
+{% block content %}
+<section id="dashboard-top">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-11 col-md-3 col-lg-3 mb-4">
+                
+                <div class="sticky-top pt-5">
+                    <img src="{% static 'images/profile_demo.avif' %}" alt="Bariwala" class="img-fluid d-block  rounded-circle shadow"
+                    style="width: 150px; height: 150px;">
+                    <small class="px-5 text-muted" >@{{ request.user.username }}</small>
+                
+                    <ul class="nav flex-column mt-4">
+                        <li class="nav-item mb-2">
+                            <a class="nav-link active rounded-3 border" aria-current="page" href="/dashboard/">Dashboard</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link active rounded-3 border" aria-current="page" href="/profile/">Add Property</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link rounded-3 border" href="/change-password/">Change Password</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link rounded-3 border" href="/settings/">Settings</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link rounded-3 border" href="/logout/">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-11 col-md-9 col-lg-9 py-3 mb-4 pt-5">
+                <div class="card p-2  text-center mb-5">
+                    <p>Add your payment method and Ensure a hassle-free experience by 
+                        verifying your profile with complete and accurate information. 
+                        If you encounter any problems or have questions,
+                         feel free to contact us. We are here to help you. 
+                         Contact Informetion : 01751379009 
+                    </p>
+                </div>
+            
+                <h5>Personal Details</h5>
+                <div class="row">
+                    <div class="col-11 col-md-6 ">
+                        <div class="card mb-3 bg-muted">
+                            <p class="p-1 ps-2 card-text "><span class="fw-bolder pe-2 ">Full Name:</span>Md Masipul Islam Siam</p>
+                        </div>
+                        
+                        <div class="card mb-3 ">
+                            <p class="p-1 ps-2 card-text "><span class="fw-bolder pe-2 ">Phone:</span>01751379009</p>
+                        </div>
+                    </div>
+                    <div class="col-11 col-md-6">
+                        <div class="card mb-3 ">
+                            <p class="p-1 ps-2 card-text "><span class="fw-bolder pe-2 ">Email:</span>Md Masipul Islam Siam</p>
+                        </div>
+                        
+                        <div class="card mb-3 ">
+                            <p class="p-1 ps-2 card-text "><span class="fw-bolder pe-2 ">Website URL:</span>01751379009</p>
+                        </div>
+                    </div>
+                </div>
+                <h5>Address</h5>
+                <div class="row">
+                    <div class="col-11 col-md-6 ">
+                        <div class="card mb-3 ">
+                            <p class="p-1 ps-2 card-text "><span class="fw-bolder pe-2 ">Full Name:</span>Md Masipul Islam Siam</p>
+                        </div>
+                        
+                        <div class="card mb-3 ">
+                            <p class="p-1 ps-2 card-text "><span class="fw-bolder pe-2 ">Phone:</span>01751379009</p>
+                        </div>
+                    </div>
+                    <div class="col-11 col-md-6">
+                        <div class="card mb-3 ">
+                            <p class="p-1 ps-2 card-text "><span class="fw-bolder pe-2 ">Email:</span>Md Masipul Islam Siam</p>
+                        </div>
+                        
+                        <div class="card mb-3 ">
+                            <p class="p-1 ps-2 card-text "><span class="fw-bolder pe-2 ">Website URL:</span>01751379009</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex gap-2 my-3 justify-content-end">
+                    <a href="/dashboard/"><button class="bg-secondary btn text-white ">Back</button></a>
+                    <a href="/admin-edit-profile/"><button class="bg-success btn text-white">Edit Profile</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

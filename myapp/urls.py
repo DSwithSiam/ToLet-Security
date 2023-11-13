@@ -16,4 +16,6 @@ urlpatterns = [
     path('wishlist/<int:pk>/', views.wishlist, name='wishlist'),
     path('contact/', views.contact, name='contact'),
     path('property-single/', views.property_single, name='property-single'),
+    path('terms-condition/', views.terms_condition, name='terms_condition'),
+    path('faq/', views.faq, name='faq'),
 ]

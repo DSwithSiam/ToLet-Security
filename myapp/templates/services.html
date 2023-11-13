@@ -1,39 +1,90 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% load static %}
 
-{% block title %}ToLet & Security | Services
-{% endblock title %}
+{% block title %}ToLet & Security | Services{% endblock title %}
 
 {% block content %}
-<section class="section services-section" id="services">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="section-title">
-                    <h2>What I Do</h2>
-                    <p>I design and develop services for customers of all sizes, specializing in creating stylish,
-                        modern websites</p>
+
+<style>
+    .service-item {
+    position: relative;
+    background: linear-gradient(80deg, #6c6c6c 45%, #222222 30%, transparent 65%, transparent 90%);
+    background-size: 200% 100%;
+    background-position: 100% 0%;
+    transition: background-position 0.4s ease-in-out;
+    border: 2px solid black;
+    border-radius: 30px 2px;
+    }
+
+    .service-item:hover {
+    background-position: 0 0;
+    color:white
+    }
+</style>
+
+
+    <!-- <section id="hero">
+        <div class="hero-bg" style="background: url('{% static 'images/home_hero.jpg' %}') center/cover no-repeat; background-size: cover; ">
+            <div class="container-fluid  py-5 bg-hero mb-5">
+                <div class="container py-5">
+                    <div class="row justify-content-start">
+                        <div class="col-lg-8 text-center text-lg-start">
+                            <h1 class="display-1 text-white mb-md-4">Our Services</h1>
+                            <a href="" class="btn btn-primary py-md-3 px-md-5 me-3">Home</a>
+                            <a href="" class="btn btn-secondary py-md-3 px-md-5">Services</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <!-- feaure box -->
-            {% for service in services %}
-            <div class="col-sm-6 col-lg-4">
-                <div class="feature-box-1">
-                    <div class="icon">
-                        <i class="{{ service.icon }}"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h5>{{ service.title }}</h5>
-                        <p>{{ service.description }}</p>
+    </section> -->
+
+    <section id="services">
+        <div class="service">
+            <div class="container-fluid py-5 border rounded">
+                <div class="container">
+                    <div class="row g-5">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="mb-3">
+                                <h6 class="text-primary text-uppercase">Services</h6>
+                                <h1 class="display-5">House rent services...</h1>
+                            </div>
+                            <p class="mb-4">Our goal is to give you something which will help you to save a lot of times and reduce the panic for handling the rental issues.</p>
+                            <a href="" class="btn btn-info py-md-3 px-md-5">Contact Us</a>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-item bg-light text-center p-5 ">
+                                <i class="fa fa-home display-1 text-info mb-3"></i>
+                                <h4>Property Listings and Matching</h4>
+                                <p class="mb-0">Help tenants find suitable properties based on their preferences, budget, and location.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-item bg-light text-center p-5 ">
+                                <i class="fa fa-cloud display-1 text-info mb-3"></i>
+                                <h4>Tenant Verification:</h4>
+                                <p class="mb-0">This can include background checks, rental history verification, and credit checks.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-item bg-light text-center p-5 ">
+                                <i class="fa fa-wrench display-1 text-info mb-3"></i>
+                                <h4>Maintenance:</h4>
+                                <p class="mb-0">Connect property owners with reliable maintenance professionals for repairs and upkeep.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-item bg-light text-center p-5 ">
+                                <i class="fa fa-headset display-1 text-info mb-3"></i>
+                                <h4>Tenant Support:</h4>
+                                <p class="mb-0">Offer customer support services to address tenant inquiries and concerns.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            {% empty %}
-            <h4>Services not available.</h4>
-            {% endfor %}
-            <!-- / -->
         </div>
-    </div>
-</section>
+    </section>
+
 {% endblock content %}
