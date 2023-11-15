@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.auth import get_user_model
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.contrib.auth.mixins import UserPassesTestMixin
+
 from django.utils.encoding import force_bytes
 from django.utils.encoding import force_str
 from django.core.mail import send_mail
@@ -21,7 +23,11 @@ UserModel = get_user_model()
 # Create your views here.
 @login_required(login_url='login')
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    if not request.user.is_superuser:
+        sms = 'Page Not Found'
+        return render(request, 'messages.html', {'sms': sms}) 
+    else:
+        return render(request, 'dashboard.html')
 
 
 def signin(request):
@@ -63,7 +69,10 @@ def signup(request):
 
             # Redirect to a dashboard or profile page
             # Change 'dashboard' to the name of your dashboard URL
-            return redirect('dashboard')
+            if not request.user.is_superuser:
+                return render(request, "user_profile.html")
+            else:
+                return render(request, "dashboard.html")
 
         else:
             # Display form errors
@@ -94,14 +103,6 @@ def changePassword(request):
     return render(request, 'change_password.html', {'form': form})
 
 
-@login_required(login_url='login')
-def profile(request):
-    return render(request, "profile.html")
-
-
-@login_required(login_url='login')
-def editProfile(request):
-    return render(request, "editProfile.html")
 
 
 def password_reset(request):
@@ -154,9 +155,20 @@ def password_reset_done(request):
 def password_reset_complete(request):
     return render(request, 'password_reset_complete.html')
 
-def admin_profile(request):
-    return render(request, 'admin_profile.html')
 
 
-def admin_edit_profile(request):
-    return render(request, 'admin_edit_profile.html')
+@login_required(login_url='login')
+def profile(request):
+    if not request.user.is_superuser:
+        return render(request, "user_profile.html")
+    else:
+        return render(request, "admin_profile.html")
+
+
+@login_required(login_url='login')
+def edit_profile(request):
+    if not request.user.is_superuser:
+        return render(request, "editProfile.html")
+    else:
+        return render(request, 'admin_edit_profile.html')
+

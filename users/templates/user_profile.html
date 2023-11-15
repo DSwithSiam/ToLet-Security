@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}ToLet & Security | Admin Profile{% endblock title %}
+{% block title %}ToLet & Security | User-Profile{% endblock title %}
 
 {% block content %}
 <section id="dashboard-top">
-    <div class="container">
+    <div class="container ">
         <div class="row justify-content-center">
             <div class="col-11 col-md-3 col-lg-3 mb-4">
                 
@@ -16,13 +16,13 @@
                 
                     <ul class="nav flex-column mt-4">
                         <li class="nav-item mb-2">
-                            <a class="nav-link active rounded-3 border" aria-current="page" href="/dashboard/">My Dashboard</a>
+                            <a class="nav-link rounded-3 border" href="#">Profile Verification</a>
                         </li>
                         <li class="nav-item mb-2">
-                            <a class="nav-link active rounded-3 border" aria-current="page" href="/profile/">Profile Verification</a>
+                            <a class="nav-link rounded-3 border" href="/saveproperty/">Save Property</a>
                         </li>
                         <li class="nav-item mb-2">
-                            <a class="nav-link rounded-3 border" href="/change-password/">Change Password</a>
+                            <a class="nav-link rounded-3 border" href="/payment/">Payment</a>
                         </li>
                         <li class="nav-item mb-2">
                             <a class="nav-link rounded-3 border" href="/services/">Services</a>
@@ -36,7 +36,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-11 col-md-9 col-lg-9 py-3 mb-4 pt-5">
+            <div class="col-11 col-md-9 col-lg-9 py-3 mb-4 pt-5 ">
                 <div class="card p-2  text-center mb-5">
                     <p>Add your payment method and Ensure a hassle-free experience by 
                         verifying your profile with complete and accurate information. 
@@ -91,7 +91,7 @@
                         </div>
                     </div>
                     <div class="d-flex gap-2 my-3 justify-content-end">
-                        <a href="/dashboard/"><button class="bg-secondary btn text-white ">Back</button></a>
+                        <a href="/"><button class="bg-secondary btn text-white ">Home</button></a>
                         <a href="/edit-profile/"><button class="bg-success btn text-white">Edit Profile</button></a>
                     </div>
                 </section>

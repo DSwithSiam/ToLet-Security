@@ -94,3 +94,46 @@ def terms_condition(request):
 
 def faq(request):
     return render(request, 'faq.html')
+
+# @login_required(login_url='login')
+# def add_property_two(request):
+#     if request.method == "POST":
+#         # property Information
+#         status = request.POST.get('status')
+#         propertytype = request.POST.get('propertytype')
+#         size = request.POST.get('size')
+#         bedroom = request.POST.get('bedroom')
+#         drawingroom = request.POST.get('drawingroom')
+#         diningroom = request.POST.get('diningroom')
+#         balcony = request.POST.get('balcony')
+#         washroom = request.POST.get('washroom')
+#         rules = request.POST.get('rules')
+#         comment = request.POST.get('comment')
+
+#         # Add Location
+#         division = request.POST.get('division')
+#         district = request.POST.get('district')
+#         areaname = request.POST.get('areaname')
+
+#         # Facilities
+#         lift = request.POST.get('lift')
+#         gas = request.POST.get('gas')
+#         garage = request.POST.get('garage')
+#         cc_camera = request.POST.get('cc_camera')
+#         security_guard = request.POST.get('security_guard')
+#         swiming_pool = request.POST.get('swiming_pool')
+#         store_room = request.POST.get('store_room')
+#         fire_extinguisher = request.POST.get('fire_extinguisher')
+
+#         # Add Images
+#         images = request.POST.get('images')
+
+#         # Owner Information
+#         owner_name = request.POST.get('owner_name')
+#         contact_number = request.POST.get('contact_number')
+#         whatsapp_number = request.POST.get('whatsapp_number')
+
+#         addproperty = Add_property(propertytype=propertytype, division=division,
+#                                    district=district, areaname=areaname, images=images)
+#         addproperty.save()
+#     return render(request, 'addproperty.html')

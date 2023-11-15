@@ -10,26 +10,32 @@
         <div class="row justify-content-center">
             <div class="col-11 col-md-3 col-lg-3 mb-4">
                 
-                <div class="sticky-top pt-5">
+                <div class="pt-5">
                     <img src="{% static 'images/profile_pic.png' %}" alt="Bariwala" class="img-fluid d-block  rounded-circle shadow"
                     style="width: 150px; height: 150px;">
                     <small class="px-5 text-muted" >@{{ request.user.username }}</small>
                 
                     <ul class="nav flex-column mt-4">
                         <li class="nav-item mb-2">
-                            <a class="nav-link active rounded-3 border" aria-current="page" href="/admin-profile/">Profile</a>
+                            <a class="nav-link active rounded-3 border" aria-current="page" href="/profile/">My Profile</a>
                         </li>
                         <li class="nav-item mb-2">
-                            <a class="nav-link active rounded-3 border" aria-current="page" href="/profile/">Add Property</a>
+                            <a class="nav-link active rounded-3 border" aria-current="page" href="/add-property/">Add Property</a>
                         </li>
                         <li class="nav-item mb-2">
-                            <a class="nav-link rounded-3 border" href="/change-password/">Change Password</a>
+                            <a class="nav-link rounded-3 border" href="#">My Properties</a>
                         </li>
                         <li class="nav-item mb-2">
-                            <a class="nav-link rounded-3 border" href="/settings/">Settings</a>
+                            <a class="nav-link rounded-3 border" href="#">Verified Properties</a>
                         </li>
                         <li class="nav-item mb-2">
-                            <a class="nav-link rounded-3 border" href="/logout/">Logout</a>
+                            <a class="nav-link rounded-3 border" href="/">Property List</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link rounded-3 border" href="#">Emergency Support</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link rounded-3 border" href="#">Tutorials</a>
                         </li>
                     </ul>
                 </div>

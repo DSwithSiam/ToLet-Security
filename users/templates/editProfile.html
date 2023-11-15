@@ -1,47 +1,108 @@
-<!DOCTYPE html>
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% load static %}
 
-{% block title %}Edit Profile{% endblock title %}
+{% block title %}ToLet & Security | User-Edit-Profile{% endblock title %}
 
 {% block content %}
 
-    <div class="container rounded bg-white mt-5 mb-5">
-        <div class="row">
-            <div class="col-md-3 border-right">
-                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>
-            </div>
-            <div class="col-md-5 border-right">
-                <div class="p-3 py-5">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="text-right">Profile Settings</h4>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value=""></div>
-                        <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname"></div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>
-                        <div class="col-md-12"><label class="labels">Address Line 1</label><input type="text" class="form-control" placeholder="enter address" value=""></div>
-                        <div class="col-md-12"><label class="labels">Address Line 2</label><input type="text" class="form-control" placeholder="enter address" value=""></div>
-                        <div class="col-md-12"><label class="labels">Postcode</label><input type="text" class="form-control" placeholder="enter address" value=""></div>
-                        <div class="col-md-12"><label class="labels">State</label><input type="text" class="form-control" placeholder="enter address" value=""></div>
-                        <div class="col-md-12"><label class="labels">Area</label><input type="text" class="form-control" placeholder="enter area " value=""></div>
-                        <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="enter email id" value=""></div>
-                        <div class="col-md-12"><label class="labels">Education</label><input type="text" class="form-control" placeholder="education" value=""></div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
-                        <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"></div>
-                    </div>
-                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+<section id="dashboard-top">
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- section 1 -->
+            <div class="col-12 col-md-3 col-lg-3 mb-4">
+                <div class="pt-5">
+                    <img src="{% static 'images/profile_pic.png' %}" alt="Bariwala" class="img-fluid d-block  rounded-circle shadow"
+                    style="width: 150px; height: 150px;">
+                    <small class="px-5 text-muted" >@{{ request.user.username }}</small>
+                
+                    <ul class="nav flex-column mt-4">
+                        <li class="nav-item mb-2">
+                            <a class="nav-link active rounded-3 border" aria-current="page" href="/profile/">Profile Verification</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link rounded-3 border" href="/change-password/">Change Password</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link rounded-3 border" href="/services/">Services</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link rounded-3 border" href="/settings/">Settings</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link rounded-3 border" href="/logout/">Logout</a>
+                        </li>
+                    </ul>
                 </div>
+            </div>
+            <!-- section 2 -->
+            <div class="col-12 col-md-9 col-lg-9 py-3 mb-4 pt-5">
+                <div class="card p-2  text-center mb-5">
+                    <p>Add your payment method and Ensure a hassle-free experience by 
+                        verifying your profile with complete and accurate information. 
+                        If you encounter any problems or have questions,
+                         feel free to contact us. We are here to help you. 
+                         Contact Informetion : 01751379009 
+                    </p>
+                </div>
+            <!-- section 2.1 -->
+                <h5>Personal Details</h5>
+                <form action="">
+                    <div class="row">
+                        <div class="col-12 col-md-6 ">
+                            <div class="form-outline mb-3">
+                                <label class="form-label" for="typeEmail">Full Name</label>
+                                <input type="email" id="typeEmail" placeholder="Enter your full name" class="form-control" />
+                            </div>
+                            <div class="form-outline mb-3">
+                                <label class="form-label" for="typeEmail">Phone</label>
+                                <input type="email" id="typeEmail" placeholder="Enter your phone number" class="form-control" />
+                            </div>
+                            <div class="form-outline mb-3">
+                                <label class="form-label" for="typeEmail">Profile Picture</label>
+                                <input type="file" id="profilePicture" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-outline mb-3">
+                                <label class="form-label" for="typeEmail">Email</label>
+                                <input type="email" id="typeEmail" placeholder="example@gmail.com" class="form-control" />
+                            </div>
+                            <div class="form-outline mb-3">
+                                <label class="form-label" for="typeEmail">Username</label>
+                                <input type="text" id="username" placeholder="{{ request.user.username }}" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="mt-2">Address</h5>
+                    <div class="row">
+                        <div class="col-12 col-md-6 ">
+                            <div class="form-outline mb-3">
+                                <label class="form-label" for="typeEmail">Street</label>
+                                <input type="email" id="typeEmail" placeholder="Enter Street" class="form-control" />
+                            </div>
+                            <div class="form-outline mb-3">
+                                <label class="form-label" for="typeEmail">State</label>
+                                <input type="email" id="typeEmail" placeholder="Enter State" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-outline mb-3">
+                                <label class="form-label" for="typeEmail">City</label>
+                                <input type="email" id="typeEmail" placeholder="Enter City" class="form-control" />
+                            </div>
+                            <div class="form-outline mb-3">
+                                <label class="form-label" for="typeEmail">Zip Code</label>
+                                <input type="email" id="typeEmail" placeholder="Zip Code" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-2 my-3 justify-content-end">
+                        <a class="btn bg-secondary text-white" href="/profile/">Back</a>
+                        <button class="btn btn-primary" type="button">Save changes</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-    </div>
-    </div>
-    <!-- script -->
-
- 
+</section>
 {% endblock content %}
-    
