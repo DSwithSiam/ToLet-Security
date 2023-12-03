@@ -5,6 +5,9 @@
 {% block content %}
 
 <!-- add -->
+
+<div class="background-image"></div>
+
 <section class="mt-5">
     <div class="d-flex justify-content-center">
         <img class="img-fluid px-2" src="{% static 'images/add-01.gif'%}" alt="">
@@ -32,7 +35,7 @@
                     <img src="{% static 'images/basa-01.jpg'%}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p><a class="text-decoration-none text-dark" href="/property-single/">Prime Office Space for Rent in 100% Compliant Building</a></p>
-                        <h6 class="text-danger d-inline card-title">
+                        <h6 class="text-success d-inline card-title">
                             <i class="fa-solid fa-house"></i>
                             {{x.propertytype}}
                         </h6>
@@ -40,10 +43,17 @@
                             <i class="fa-solid fa-location-dot"></i>
                             {{x.division}}, {{x.district}}
                         </p>
-                        <small class="text-muted d-block">
-                            <i class="fa-regular fa-clock"></i>
-                            Last updated 3 mins ago
-                        </small>
+                        <div class="d-flex justify-content-between">
+                            <div class="post">
+                                <small class="text-muted d-block">
+                                    <i class="fa-regular fa-clock"></i>
+                                    Posted 1 minute ago
+                                </small>
+                            </div>
+                            <div class="saved">
+                                <i class="fa-regular fa-heart"></i>
+                            </div>
+                        </div>
                     </div>
                     <div class="">
                         

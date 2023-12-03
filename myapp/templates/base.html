@@ -11,12 +11,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     
     <link rel="stylesheet" href='{% static "css/setting.css" %}'>
-    <link rel="stylesheet" href='{% static "css/adproperty.css" %}'>
+    <link rel="stylesheet" href='{% static "css/addproperty.css" %}'>
     <link rel="stylesheet" href='{% static "css/about.css" %}'>
     <link rel="stylesheet" href='{% static "css/footer.css" %}'>
     <link rel="stylesheet" href='{% static "css/services.css" %}'>
     <link rel="stylesheet" href='{% static "css/profile.css" %}'>
     <link rel="stylesheet" href='{% static "css/contact.css" %}'>
+    <link rel="stylesheet" href='{% static "css/tutorial.css" %}'>
+    <link rel="stylesheet" href='{% static "css/Emergency.css" %}'>
+
+
+
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href='{% static "css/editProfile.css" %}'>
@@ -41,14 +47,76 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    
     <script src="{% static "js/addproperty.js" %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <script>
+    {% if messages %}
+        {% for message in messages %}
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            }
+          });
+          Toast.fire({
+            icon: "{{ message.tags }}",
+            title: "{{ message }}"
+          });
+        {% endfor %}
+    {% endif %}
+    </script>
+
+
+    <!-- whatsapp emergency support button -->
+    <script>
+      var url = 'https://wati-integration-prod-service.clare.ai/v2/watiWidget.js?8819';
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = url;
+      var options = {
+      "enabled":true,
+      "chatButtonSetting":{
+          "backgroundColor":"#00e785",
+          "ctaText":"Chat with us",
+          "borderRadius":"25",
+          "marginLeft": "0",
+          "marginRight": "20",
+          "marginBottom": "20",
+          "ctaIconWATI":false,
+          "position":"right"
+      },
+      "brandSetting":{
+          "brandName":"Wati",
+          "brandSubTitle":"undefined",
+          "brandImg":"https://www.wati.io/wp-content/uploads/2023/04/Wati-logo.svg",
+          "welcomeText":"Hi there!\nHow can I help you?",
+          "messageText":"Hello, %0A I have a question about {{page_link}}",
+          "backgroundColor":"#00e785",
+          "ctaText":"Emergency Support",
+          "borderRadius":"25",
+          "autoShow":false,
+          "phoneNumber":"8801706711482"
+      }
+      };
+      s.onload = function() {
+          CreateWhatsappChatWidget(options);
+      };
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+  </script>
+        
     
-    
-   
-    {% comment %} <script src="{% static "js/jquery.js" %}"></script> {% endcomment %}
-    
-   
+    {% block script %}
+        
+    {% endblock script %}
+        
 </body>
-    
 </html>

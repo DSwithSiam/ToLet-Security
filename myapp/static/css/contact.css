@@ -13,7 +13,9 @@
 .contact3 h6 {
   color: #3e4555;
 }
-
+.address h6 p {
+  margin-left: 20px;
+}
 .contact3 .font-weight-medium {
   font-weight: 500;
 }

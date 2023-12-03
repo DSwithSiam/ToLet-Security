@@ -1,0 +1,247 @@
+body {
+	font-family: 'Arimo', sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 25px;
+	color: #707070;
+}
+
+a img:hover {
+	opacity: .9;
+}
+
+p {
+	margin-bottom: 20px;
+}
+.lead {
+	font-size: 14px;
+	line-height: 25px;
+	font-weight: 700;
+	color: #262625;
+	margin-bottom: 36px;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: #262625;
+	margin-top: 0;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+}
+
+/* Page Title */
+   .page-title {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+    font-weight: 700px;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 1px;
+}
+.page-title .inner {
+	padding: 112px 0;
+	position: relative;
+	z-index: 2;
+}
+.page-title.portfolio-title .inner {
+	padding: 0;
+	padding-top: 390px;
+}
+.page-title .sub-title {
+	background: #fff;
+	color: #0d0d0d;
+	font-size: 16px;
+	line-height: 21px;
+	padding: 0 6px;
+	display: table;
+}
+.page-title .title {
+	font-size: 40px;
+	line-height: 48px;
+	display: table;
+	color: #fff;
+}
+.breadcrumb {
+	padding: 0;
+	line-height: 15px;
+	border-radius: 0;
+	background: none;
+	display: table;
+	color: #fff;
+	font-size: 12px;
+}
+.breadcrumb a {
+	color: #fff;
+}
+.breadcrumb>li+li:before {
+	color: #fff;
+	content: '::';
+}
+
+.breadcrumb>.active {
+	color: #fed204;
+}
+.map {
+	height: 100%;
+	width: 100%;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+@media all and (max-width: 768px) {
+	.page-title .inner {
+		padding: 48px 0;
+	}
+}
+
+/* Blog Posts */
+.blog .blog-post {
+	margin-bottom: 35px;
+}
+.blog .blog-post.wide {
+	display: table;
+}
+.blog .blog-post.wide .blog-post-media {
+	display: table-cell;
+	width: 50%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.blog .blog-post .blog-post-media audio {
+	width: 100%;
+	vertical-align: bottom;
+}
+.blog .blog-post .blog-post-content {
+	padding: 33px;
+	border: 1px solid #ececec;
+}
+.blog .blog-post.wide .blog-post-content {
+	display: table-cell;
+	width: 50%;
+}
+.blog .blog-post h4.blog-post-title {
+	font-size: 24px;
+	line-height: 28px;
+	margin-bottom: 18px;
+}
+.blog .blog-post.wide h4.blog-post-title {
+	font-size: 18px;
+	line-height: 21px;
+}
+.blog .blog-post h4.blog-post-title span {
+	display: table;
+	background: #0e9af2;
+	color: #fff;
+	font-size: 12px;
+	line-height: 21px;
+	padding: 0 6px;
+	margin-bottom: 8px;
+}
+.blog .blog-post.link .link-url {
+	font-size: 20px;
+	line-height: 22px;
+	display: block;
+	margin-bottom: 18px;
+}
+.blog .blog-post.quote .quote-icon {
+	font-size: 48px;
+	line-height: 48px;
+	display: block;
+	color: #cfcfcf;
+	font-family: "Arial Black", sans-serif;
+}
+
+
+.blog .blog-post .blog-post-meta {
+	margin-bottom: 0;
+	color: #8e8e8e;
+	font-size: 12px;
+	line-height: 21px;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+}
+.blog .blog-post .blog-post-meta li {
+	margin-right: 22px;
+}
+.blog .blog-post .blog-post-meta i {
+	font-size: 16px;
+	margin-right: 8px;
+	line-height: 21px;
+	vertical-align: middle;
+}
+.blog .blog-post .blog-post-meta a {
+	color: #8e8e8e;
+}
+
+/* Blog Masonry */
+   .blog-post-sizer {
+	width: 33.33%;
+}
+.blog-masonry .blog-post {
+	width: 33.33%;
+	float: left;
+	padding: 0 16px;
+}
+.blog-masonry .blog-post.large {
+	width: 66.66%;
+}
+.blog-masonry .blog-post.wide {
+	width: 66.66%;
+}
+.blog-masonry .blog-post h4.blog-post-title {
+	font-size: 18px;
+	line-height: 21px;
+}
+.blog-masonry .blog-post.large h4.blog-post-title {
+	font-size: 24px;
+	line-height: 28px;
+}
+.masonry-blog-load-more {
+	text-align: center;
+	margin-top: 33px;
+}
+
+/* reponsive */
+  @media screen and (max-width: 860px) {
+    .flex-direction-nav .flex-prev {
+      opacity: 1;
+      left: 10px;
+    }
+    .flex-direction-nav .flex-next {
+      opacity: 1;
+      right: 10px;
+    }
+  }
+
+.img-responsive,
+.thumbnail a>img,
+.thumbnail>img{
+
+    display:block;
+    max-width:100%;
+    height:auto
+}
+
+.embed-responsive{
+    position:relative;
+    display:block;
+    height:0;padding:0;
+    overflow:hidden}
+    
+.embed-responsive iframe,.embed-responsive object,
+.embed-responsive video{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:100%;
+    border:0}
+    
+.embed-responsive-16by9{
+    padding-bottom:56.25%
+}
+

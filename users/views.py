@@ -16,11 +16,26 @@ from django.http import HttpResponse
 from django.contrib.sites.shortcuts import get_current_site
 from django.urls import reverse
 from tolet.settings import DEFAULT_FROM_EMAIL
-
+from django.http import JsonResponse
+from .models import *
 UserModel = get_user_model()
+from django.shortcuts import get_object_or_404
 
 
 # Create your views here.
+def get_districts(request, division_id):
+    division = Division.objects.get(id=division_id)
+    districts = District.objects.filter(division=division)
+    data = [{'id': district.id, 'name': district.name} for district in districts]
+    return JsonResponse(data, safe=False)
+
+def get_upazilas(request, district_id):
+    district = District.objects.get(id=district_id)
+    upazilas = Upazila.objects.filter(district=district)
+    data = [{'id': upazila.id, 'name': upazila.name} for upazila in upazilas]
+    return JsonResponse(data, safe=False)
+
+
 @login_required(login_url='login')
 def dashboard(request):
     if not request.user.is_superuser:
@@ -159,16 +174,79 @@ def password_reset_complete(request):
 
 @login_required(login_url='login')
 def profile(request):
+    # Assuming you have a one-to-one relationship between User and Profile models
+    
+    try:
+        profile = request.user.profile
+    except Profile.DoesNotExist:
+        # If the profile does not exist, create it
+        profile = Profile.objects.create(user=request.user)
+        
+    
     if not request.user.is_superuser:
-        return render(request, "user_profile.html")
+        return render(request, "user_profile.html", {'profile': profile})
     else:
-        return render(request, "admin_profile.html")
+        return render(request, "admin_profile.html", {'profile': profile})
 
 
 @login_required(login_url='login')
 def edit_profile(request):
+    # Fetch all divisions, districts, and upazilas from the database
+    divisions = Division.objects.all()
+    districts = District.objects.all()
+    upazilas = Upazila.objects.all()
+
+    # Get the current user's profile
+    profile = request.user.profile
+
+    if request.method == 'POST':
+        # Update User model fields
+        request.user.first_name = request.POST.get('first_name', '')
+        request.user.last_name = request.POST.get('last_name', '')
+        request.user.email = request.POST.get('email', '')
+        request.user.save()
+
+        # Update Profile model fields
+        profile.phone = request.POST.get('phone', '')
+
+        # Fetch the Division instance based on the provided ID (assuming 'division' is the ID)
+        division_id = request.POST.get('division', '')
+        division = get_object_or_404(Division, id=division_id)
+        profile.division = division
+
+        # Fetch the District instance based on the provided ID (assuming 'district' is the ID)
+        district_id = request.POST.get('district', '')
+        district = get_object_or_404(District, id=district_id)
+        profile.district = district
+
+        # Fetch the Upazila instance based on the provided ID (assuming 'upazila' is the ID)
+        upazila_id = request.POST.get('upazila', '')
+        upazila = get_object_or_404(Upazila, id=upazila_id)
+        profile.upazila = upazila
+
+        if 'profile_picture' in request.FILES:
+            profile.profile_picture = request.FILES.get('profile_picture')
+            profile.save()
+
+
+        profile.area = request.POST.get('area', '')
+        profile.save()
+
+        messages.success(request, 'Profile updated successfully.')
+        return redirect('profile')  # Redirect to the profile page after saving changes
+
+    # Render the edit profile form with initial data
+    context = {
+        'divisions': divisions,
+        'districts': districts,
+        'upazilas': upazilas,
+        'profile': profile,  # Include the user's profile in the context
+    }
+
     if not request.user.is_superuser:
-        return render(request, "editProfile.html")
+        return render(request, "editProfile.html", context)
     else:
-        return render(request, 'admin_edit_profile.html')
+        return render(request, 'admin_edit_profile.html', context)
+
+
 

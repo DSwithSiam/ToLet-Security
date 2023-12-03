@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+ToLet & Security | Privacy Policy
+{% endblock title %}
+
+{% block content %}
+<section id="settings" class="my-5">
+    <div class="contact3 py-5 px-lg-5 px-3">
+        <div class="row no-gutters">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="card-shadow">
+                  <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/2.jpg" class="img-fluid">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="contact-box ml-3">
+                  <h1 class="font-weight-light mt-2">Quick Contact</h1>
+                  <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="3" placeholder="Enter your message"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <button type="submit" class="btn btn-danger mt-3">Submit</button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="card mt-4 border-0 mb-4">
+                  <div class="row align-items-center">
+                    <div class="col-lg-4 col-md-4">
+                      <div class="card-body d-flex align-items-center c-detail">
+                        <div class="align-self-center">
+                          <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon1.png">
+                        </div>
+                        <div class="address ms-3">
+                          <h6 class="font-weight-medium">Address</h6>
+                          <p>601 Sherwood Ave.
+                            <br> San Bernandino</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                      <div class="card-body d-flex align-items-center c-detail">
+                        <div class="mr-3 align-self-center">
+                          <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon2.png">
+                        </div>
+                        <div class="">
+                          <h6 class="font-weight-medium mx-4">Phone</h6>
+                          <p class="mx-4">251 546 9442
+                            <br> 630 446 8851</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                      <div class="card-body d-flex align-items-center c-detail">
+                        <div class="mr-3 align-self-center">
+                          <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon3.png">
+                        </div>
+                        <div class="">
+                          <h6 class="font-weight-medium mx-4">Email</h6>
+                          <p class="mx-4">
+                            info@wrappixel.com
+                            <br> 123@wrappixel.com
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+{% endblock content %}

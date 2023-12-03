@@ -46,63 +46,143 @@
                 </div>
             <!-- section 2.1 -->
                 <h5>Personal Details</h5>
-                <form action="">
+                <form action="" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                    {% csrf_token %}
                     <div class="row">
-                        <div class="col-12 col-md-6 ">
+                        <div class="col-12 col-md-6">
                             <div class="form-outline mb-3">
-                                <label class="form-label" for="typeEmail">Full Name</label>
-                                <input type="email" id="typeEmail" placeholder="Enter your full name" class="form-control" />
+                                <label class="form-label" for="id_username">Username</label>
+                                <input type="text" id="id_username" placeholder="Enter your short username" class="form-control" required>
+                                <div class="invalid-feedback">Please enter a username.</div>
                             </div>
                             <div class="form-outline mb-3">
-                                <label class="form-label" for="typeEmail">Phone</label>
-                                <input type="email" id="typeEmail" placeholder="Enter your phone number" class="form-control" />
+                                <label class="form-label" for="id_firstName">First name</label>
+                                <input type="text" id="id_firstName" name="first_name" placeholder="Enter your first name" class="form-control" required>
+                                <div class="invalid-feedback">Please enter your first name.</div>
                             </div>
                             <div class="form-outline mb-3">
-                                <label class="form-label" for="typeEmail">Profile Picture</label>
-                                <input type="file" id="profilePicture" class="form-control" />
+                                <label class="form-label" for="id_email">E-mail</label>
+                                <input type="email" id="id_email" name="email" placeholder="Enter your valid email" class="form-control" required>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-outline mb-3">
-                                <label class="form-label" for="typeEmail">Email</label>
-                                <input type="email" id="typeEmail" placeholder="example@gmail.com" class="form-control" />
+                                <label class="form-label" for="id_profilePicture">Profile Picture</label>
+                                <input type="file" id="id_profilePicture" name="profile_picture" class="form-control" required>
+                                <div class="invalid-feedback">Please choose a profile picture.</div>
                             </div>
                             <div class="form-outline mb-3">
-                                <label class="form-label" for="typeEmail">Username</label>
-                                <input type="text" id="username" placeholder="{{ request.user.username }}" class="form-control" />
+                                <label class="form-label" for="id_lastName">Last name</label>
+                                <input type="text" id="id_lastName" name="last_name" placeholder="Enter your last name" class="form-control" required>
+                                <div class="invalid-feedback">Please enter your last name.</div>
+                            </div>
+                            <div class="form-outline mb-3">
+                                <label class="form-label" for="id_phoneNumber">Phone</label>
+                                <input type="tel" id="id_phoneNumber" name="phone" placeholder="Enter your phone number" class="form-control" required>
+                                <div class="invalid-feedback">Please enter a valid phone number.</div>
                             </div>
                         </div>
                     </div>
                     <h5 class="mt-2">Address</h5>
                     <div class="row">
-                        <div class="col-12 col-md-6 ">
+                        <div class="col-12 col-md-6">
                             <div class="form-outline mb-3">
-                                <label class="form-label" for="typeEmail">Street</label>
-                                <input type="email" id="typeEmail" placeholder="Enter Street" class="form-control" />
+                                <label class="form-label" for="id_division">Division</label>
+                                <select name="division" id="id_division" class="form-select" required>
+                                    <option value="" disabled selected>Choose a division</option>
+                                    {% for division in divisions %}
+                                        <option value="{{ division.id }}">{{ division.name }}</option>
+                                    {% endfor %}
+                                </select>
+                                <div class="invalid-feedback">Please choose a division.</div>
                             </div>
                             <div class="form-outline mb-3">
-                                <label class="form-label" for="typeEmail">State</label>
-                                <input type="email" id="typeEmail" placeholder="Enter State" class="form-control" />
+                                <label class="form-label" for="id_district">District</label>
+                                <select name="district" id="id_district" class="form-select" required>
+                                    <option value="" disabled selected>Choose a district</option>
+                                </select>
+                                <div class="invalid-feedback">Please choose a district.</div>
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-outline mb-3">
-                                <label class="form-label" for="typeEmail">City</label>
-                                <input type="email" id="typeEmail" placeholder="Enter City" class="form-control" />
+                                <label class="form-label" for="id_upazila">Upazila</label>
+                                <select name="upazila" id="id_upazila" class="form-select" required>
+                                    <option value="" disabled selected>Choose an upazila</option>
+                                </select>
+                                <div class="invalid-feedback">Please choose an upazila.</div>
                             </div>
                             <div class="form-outline mb-3">
-                                <label class="form-label" for="typeEmail">Zip Code</label>
-                                <input type="email" id="typeEmail" placeholder="Zip Code" class="form-control" />
+                                <label class="form-label" for="id_area">Area</label>
+                                <input type="text" id="id_area" name="area" placeholder="Street / Zip Code / Block / Sector" class="form-control" required>
+                                <div class="invalid-feedback">Please enter the area details.</div>
                             </div>
                         </div>
                     </div>
                     <div class="d-flex gap-2 my-3 justify-content-end">
                         <a class="btn bg-secondary text-white" href="/profile/">Back</a>
-                        <button class="btn btn-primary" type="button">Save changes</button>
+                        <button class="btn btn-primary" type="submit">Save changes</button>
                     </div>
                 </form>
+                
             </div>
         </div>
     </div>
 </section>
 {% endblock content %}
+
+
+{% block script %}
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#id_division').change(function() {
+            var divisionId = $(this).val();
+            if (divisionId) {
+                $('#id_district').prop('disabled', false);
+                $.ajax({
+                    url: `/get_districts/${divisionId}/`,
+                    type: 'GET',
+                    success: function(data) {
+                        $('#id_district').empty();
+                        $('#id_district').append('<option value="">---------</option>');
+                        $.each(data, function(key, value) {
+                            $('#id_district').append(`<option value="${value.id}">${value.name}</option>`);
+                        });
+                    }
+                });
+            } else {
+                $('#id_district').prop('disabled', true);
+                $('#id_upazila').prop('disabled', true);
+                $('#id_district').empty();
+                $('#id_upazila').empty();
+                $('#id_district').append('<option value="">---------</option>');
+                $('#id_upazila').append('<option value="">---------</option>');
+            }
+        });
+
+        $('#id_district').change(function() {
+            var districtId = $(this).val();
+            if (districtId) {
+                $('#id_upazila').prop('disabled', false);
+                $.ajax({
+                    url: `/get_upazilas/${districtId}/`,
+                    type: 'GET',
+                    success: function(data) {
+                        $('#id_upazila').empty();
+                        $('#id_upazila').append('<option value="">---------</option>');
+                        $.each(data, function(key, value) {
+                            $('#id_upazila').append(`<option value="${value.id}">${value.name}</option>`);
+                        });
+                    }
+                });
+            } else {
+                $('#id_upazila').prop('disabled', true);
+                $('#id_upazila').empty();
+                $('#id_upazila').append('<option value="">---------</option>');
+            }
+        });
+    });
+</script>
+{% endblock script %}

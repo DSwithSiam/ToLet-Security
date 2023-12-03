@@ -19,11 +19,40 @@ def home(request):
 @login_required(login_url='login')
 def add_property(request):
     if request.method == "POST":
+        # property Information
+        status = request.POST.get('status')
         propertytype = request.POST.get('propertytype')
+        size = request.POST.get('size')
+        bedroom = request.POST.get('bedroom')
+        drawingroom = request.POST.get('drawingroom')
+        diningroom = request.POST.get('diningroom')
+        balcony = request.POST.get('balcony')
+        washroom = request.POST.get('washroom')
+        rules = request.POST.get('rules')
+        comment = request.POST.get('comment')
+
+        # Add Location
         division = request.POST.get('division')
         district = request.POST.get('district')
         areaname = request.POST.get('areaname')
+
+        # Facilities
+        lift = request.POST.get('lift')
+        gas = request.POST.get('gas')
+        garage = request.POST.get('garage')
+        cc_camera = request.POST.get('cc_camera')
+        security_guard = request.POST.get('security_guard')
+        swiming_pool = request.POST.get('swiming_pool')
+        store_room = request.POST.get('store_room')
+        fire_extinguisher = request.POST.get('fire_extinguisher')
+
+        # Add Images
         images = request.POST.get('images')
+
+        # Owner Information
+        owner_name = request.POST.get('owner_name')
+        contact_number = request.POST.get('contact_number')
+        whatsapp_number = request.POST.get('whatsapp_number')
 
         addproperty = Add_property(propertytype=propertytype, division=division,
                                    district=district, areaname=areaname, images=images)
@@ -33,6 +62,10 @@ def add_property(request):
 
 def about(request):
     return render(request, 'about.html')
+
+
+def tutorial(request):
+    return render(request, 'tutorial.html')
 
 
 def sublet(request):
@@ -83,17 +116,45 @@ def wishlist(request, pk):
     wishlist.object.create(property=property, user=request.user)
     return render(request, 'wishlist.html')
 
+
 def contact(request):
-    return render(request, 'contact.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Thanks for contact with us.')
+            return redirect('home')  # Redirect to a success page
+
+        else:
+            messages.error(request, "Invalid form data.")
+            return redirect('home')
+    else:
+        form = ContactForm()
+
+    return render(request, 'contact.html', {'form': form})
+
 
 def property_single(request):
     return render(request, 'property_single.html')
 
-def terms_condition(request):
-    return render(request, 'terms_condition.html')
 
-def faq(request):
-    return render(request, 'faq.html')
+def privacy_policy(request):
+    privacy_policy = PrivacyPolicy.objects.first()
+    return render(request, 'privacy_policy.html', {'privacy_policy': privacy_policy})
+
+
+def terms_and_conditions(request):
+    terms_and_conditions = TermsAndConditions.objects.first()
+    return render(request, 'terms_conditions.html', {'terms_and_conditions': terms_and_conditions})
+
+
+def faqs(request):
+    faqs = FAQ.objects.all()
+    return render(request, 'faq.html', {'faqs': faqs})
+
+
+def Emergency(request):
+    return render(request, 'Emergency.html')
 
 # @login_required(login_url='login')
 # def add_property_two(request):

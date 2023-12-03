@@ -35,151 +35,29 @@
     </div>
 </section>
 
-<div class="container my-5">
-  <h1>Frequently Asked Questions (FAQ)-Security</h1>
- <!-- Question 1-->
-  <div class="accordion" id="faqAccordion">
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-         <b>Question 1: How is my data protected?</b>
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          We prioritize the security of your data through advanced encryption protocols and secure storage practices. Rest assured, your information is treated with the utmost care.
-        </div>
-      </div>
-    </div>
+<div class="container mt-5">
+  <h1 class="mb-4">Frequently Asked Questions</h1>
 
-       <!-- Question 2-->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-         <b> Question 2: Do you share my personal information with third parties?</b>
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          No, we do not share your personal information with third parties without your explicit consent. Your privacy is important to us.
-        </div>
+  {% if faqs %}
+      <div class="accordion" id="faqAccordion">
+          {% for faq in faqs %}
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="faqHeading{{ forloop.counter }}">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse{{ forloop.counter }}" aria-expanded="true" aria-controls="faqCollapse{{ forloop.counter }}">
+                          <strong>{{ faq.question }}</strong>
+                      </button>
+                  </h2>
+                  <div id="faqCollapse{{ forloop.counter }}" class="accordion-collapse collapse" aria-labelledby="faqHeading{{ forloop.counter }}" data-bs-parent="#faqAccordion">
+                      <div class="accordion-body">
+                          {{ faq.answer }}
+                      </div>
+                  </div>
+              </div>
+          {% endfor %}
       </div>
-    </div>
-
-        <!-- Question 3-->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-         <b> Question 3: What measures are in place to prevent unauthorized access?</b>
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          Our platform employs robust authentication and authorization processes to prevent unauthorized access. Multi-factor authentication adds an extra layer of security.
-        </div>
-      </div>
-    </div>
-
-        <!-- Question 4-->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        <b>  Question 4: Is my payment information secure?</b>
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          Absolutely. We use industry-standard security measures for handling payment information. All transactions are encrypted to ensure a secure payment process.
-        </div>
-      </div>
-    </div>
-
-      <!-- Question 5-->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-         <b> Question 5: 	How do you handle security breaches?</b>
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          In the unlikely event of a security breach. We have a    comprehensive response plan to mitigate the impact and notify affected users promptly.  Your security is our top priority.
-        </div>
-      </div>
-    </div>
-
-       <!-- Question 6-->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        <b>  Question 6: What steps can I take to enhance my account security?</b>
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          We recommend regularly updating your password. Enabling two-factor authentication. and being cautious about phishing attempts. Stay informed about best security practices.
-        </div>
-      </div>
-    </div>
-
-        <!-- Question 7-->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        <b>  Question 7: Are my login credentials stored securely?</b>
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          Yes, your login credentials are securely hashed and stored.   We follow industry standards to safeguard your sensitive information.
-        </div>
-      </div>
-    </div>
-
-       <!-- Question 8-->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-         <b> Question 8: How often is the system audited for security?</b>
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          Our security systems undergo regular audits and assessments to identify and address potential vulnerabilities. We are committed to maintaining a robust and secure environment.
-        </div>
-      </div>
-    </div>
-
-        <!-- Question 9-->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-         <b> Question 9: What should I do if I suspect unusual activity on my account?</b>
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          Contact our support team immediately if you notice any suspicious activity. We will investigate promptly and take necessary actions to secure your account.
-        </div>
-      </div>
-    </div>
-
-       <!-- Question 10-->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        <b>  Question 10: Can I trust your platform with my sensitive information? </b>
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          Yes, you can trust us. We take every possible measure to ensure the confidentiality and integrity of your sensitive information. Our commitment to security is unwavering.
-        </div>
-      </div>
-    </div>
-    
-    <!-- Add more FAQ items as needed -->
-  </div>
+  {% else %}
+      <p>No FAQs available.</p>
+  {% endif %}
 </div>
 
 <!-- Bootstrap JS and dependencies -->

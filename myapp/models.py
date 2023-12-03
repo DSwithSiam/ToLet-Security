@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
+from ckeditor.fields import RichTextField
 
 
 # Create your models here.
@@ -15,36 +16,14 @@ class Service(models.Model):
         return self.title
 
 
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = models.ImageField(default='no-image.jpg', upload_to='profile')
-
-    def __str__(self):
-        return f'{self.user.username} Profile'
-
-    def save(self, *args, **kwargs):
-        # save the profile first
-        super().save(*args, **kwargs)
-
-        # resize the image
-        img = Image.open(self.avatar.path)
-        if img.height > 300 or img.width > 300:
-            output_size = (300, 300)
-            # create a thumbnail
-            img.thumbnail(output_size)
-            # overwrite the larger image
-            img.save(self.avatar.path)
-
 # Add Property
-
-
 class Add_property(models.Model):
     propertytype = models.CharField(max_length=100)
     division = models.CharField(max_length=100)
     district = models.CharField(max_length=100)
     areaname = models.CharField(max_length=100)
     images = models.ImageField(upload_to='addproperty')
-    
+
 
 # class Add_property(models.Model):
 
@@ -82,3 +61,49 @@ class Add_property(models.Model):
 #     owner_name = models.CharField(max_length=100)
 #     contact_number = models.IntegerField()
 #     whatsapp_number = models.IntegerField()
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20)
+    message = models.TextField()
+    contacted_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
+
+class PrivacyPolicy(models.Model):
+    title = models.CharField(max_length=200)
+    content = RichTextField()
+    last_updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Privacy Policy"
+        verbose_name_plural = "Privacy Policy"
+
+
+class TermsAndConditions(models.Model):
+    title = models.CharField(max_length=200)
+    content = RichTextField()
+    last_updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Terms And Condition"
+        verbose_name_plural = "Terms And Conditions"
+
+
+class FAQ(models.Model):
+    question = models.CharField(max_length=255)
+    answer = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.question

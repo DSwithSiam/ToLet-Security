@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-i#3(09(sxhnt==ux&d7exz-p&84y#b&5d%hi++gbmvz3)(!0a7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.versel.app']
 
 
 # Application definition
@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',
     'users',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +127,6 @@ EMAIL_HOST_USER = 'resetpassword@meghafoodltd.com'
 EMAIL_HOST_PASSWORD = '%//ab=qc19M'
 EMAIL_USE_SSL = True
 DEFAULT_FROM_EMAIL = 'resetpassword@meghafoodltd.com'
+
+
+CKEDITOR_UPLOAD_PATH = "uploads/"

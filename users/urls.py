@@ -26,4 +26,8 @@ urlpatterns = [
          views.password_reset_confirm, name='password_reset_confirm'),
     path('password-reset-complete/', views.password_reset_complete,
          name='password_reset_complete'),
+
+
+     path('get_districts/<int:division_id>/', views.get_districts, name='get_districts'),
+     path('get_upazilas/<int:district_id>/', views.get_upazilas, name='get_upazilas'),
 ]
